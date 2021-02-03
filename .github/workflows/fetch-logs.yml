@@ -1,0 +1,48 @@
+name: Fetch tinuous CI logs
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v2
+
+      - name: Checkout con/tinuous
+        uses: actions/checkout@v2
+        with:
+          repository: con/tinuous
+          path: tinuous
+
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '^3.8'
+
+      - name: Install tinuous dependencies
+        run:
+          python -m pip install --upgrade pip wheel
+          python -m pip install -r tinuous/requirements.txt
+
+      - name: Run tinuous
+        run: python tinuous/tinuous
+        env:
+          GITHUB_TOKEN: ${{ secrets.DANDIBOT_GITHUB_TOKEN }}
+          TRAVIS_TOKEN: ${{ secrets.TRAVIS_TOKEN }}
+
+      - name: Commit & push
+        run:
+          git config --global user.email "github@nil.nil"
+          git config --global user.name "GitHub Actions"
+
+          git add .dlstate.json logs
+          if ! git diff --quiet --cached
+          then git commit -m 'Ran tinuous'
+               git push
+          else echo "No changes to commit"
+          fi
+
+# vim:set sts=2:
