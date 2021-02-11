@@ -1,0 +1,204 @@
+2021-02-04T21:35:19.7850469Z ##[section]Starting: Request a runner to run this job
+2021-02-04T21:35:20.0083104Z Can't find any online and idle self-hosted runner in current repository that matches the required labels: 'ubuntu-latest'
+2021-02-04T21:35:20.0083209Z Can't find any online and idle self-hosted runner in current repository's account/organization that matches the required labels: 'ubuntu-latest'
+2021-02-04T21:35:20.0083587Z Found online and idle hosted runner in current repository's account/organization that matches the required labels: 'ubuntu-latest'
+2021-02-04T21:35:20.2111883Z ##[section]Finishing: Request a runner to run this job
+2021-02-04T21:35:29.6005589Z Current runner version: '2.276.1'
+2021-02-04T21:35:29.6036600Z ##[group]Operating System
+2021-02-04T21:35:29.6037573Z Ubuntu
+2021-02-04T21:35:29.6038109Z 20.04.2
+2021-02-04T21:35:29.6038602Z LTS
+2021-02-04T21:35:29.6039085Z ##[endgroup]
+2021-02-04T21:35:29.6039720Z ##[group]Virtual Environment
+2021-02-04T21:35:29.6040384Z Environment: ubuntu-20.04
+2021-02-04T21:35:29.6041023Z Version: 20210131.1
+2021-02-04T21:35:29.6042092Z Included Software: https://github.com/actions/virtual-environments/blob/ubuntu20/20210131.1/images/linux/Ubuntu2004-README.md
+2021-02-04T21:35:29.6043211Z ##[endgroup]
+2021-02-04T21:35:29.6046515Z Prepare workflow directory
+2021-02-04T21:35:29.6739472Z Prepare all required actions
+2021-02-04T21:35:29.6751641Z Getting action download info
+2021-02-04T21:35:30.2980568Z Download action repository 'actions/checkout@v2'
+2021-02-04T21:35:32.1726955Z Download action repository 'actions/setup-python@v2'
+2021-02-04T21:35:32.7082147Z ##[group]Run actions/checkout@v2
+2021-02-04T21:35:32.7082967Z with:
+2021-02-04T21:35:32.7083807Z   repository: con/tinuous
+2021-02-04T21:35:32.7084826Z   token: ***
+2021-02-04T21:35:32.7085300Z   ssh-strict: true
+2021-02-04T21:35:32.7085892Z   persist-credentials: true
+2021-02-04T21:35:32.7086467Z   clean: true
+2021-02-04T21:35:32.7086942Z   fetch-depth: 1
+2021-02-04T21:35:32.7087426Z   lfs: false
+2021-02-04T21:35:32.7087898Z   submodules: false
+2021-02-04T21:35:32.7088388Z ##[endgroup]
+2021-02-04T21:35:33.1403073Z Syncing repository: con/tinuous
+2021-02-04T21:35:33.1422145Z ##[group]Getting Git version info
+2021-02-04T21:35:33.1424911Z Working directory is '/home/runner/work/tinuous/tinuous'
+2021-02-04T21:35:33.1476131Z [command]/usr/bin/git version
+2021-02-04T21:35:33.1617437Z git version 2.30.0
+2021-02-04T21:35:33.1640656Z ##[endgroup]
+2021-02-04T21:35:33.1646932Z Deleting the contents of '/home/runner/work/tinuous/tinuous'
+2021-02-04T21:35:33.1651425Z ##[group]Initializing the repository
+2021-02-04T21:35:33.1655124Z [command]/usr/bin/git init /home/runner/work/tinuous/tinuous
+2021-02-04T21:35:33.1729451Z hint: Using 'master' as the name for the initial branch. This default branch name
+2021-02-04T21:35:33.6932394Z hint: is subject to change. To configure the initial branch name to use in all
+2021-02-04T21:35:33.6933637Z hint: of your new repositories, which will suppress this warning, call:
+2021-02-04T21:35:33.6934449Z hint: 
+2021-02-04T21:35:33.6967406Z hint: 	git config --global init.defaultBranch <name>
+2021-02-04T21:35:33.6968330Z hint: 
+2021-02-04T21:35:33.6969355Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2021-02-04T21:35:33.6970630Z hint: 'development'. The just-created branch can be renamed via this command:
+2021-02-04T21:35:33.6971491Z hint: 
+2021-02-04T21:35:33.6972259Z hint: 	git branch -m <name>
+2021-02-04T21:35:33.6973173Z Initialized empty Git repository in /home/runner/work/tinuous/tinuous/.git/
+2021-02-04T21:35:33.6974295Z [command]/usr/bin/git remote add origin https://github.com/con/tinuous
+2021-02-04T21:35:33.6975244Z ##[endgroup]
+2021-02-04T21:35:33.6976092Z ##[group]Disabling automatic garbage collection
+2021-02-04T21:35:33.6977175Z [command]/usr/bin/git config --local gc.auto 0
+2021-02-04T21:35:33.6977909Z ##[endgroup]
+2021-02-04T21:35:33.6980181Z ##[group]Setting up auth
+2021-02-04T21:35:33.6981855Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-02-04T21:35:33.6990099Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-02-04T21:35:33.6992005Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-02-04T21:35:33.6994212Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-02-04T21:35:33.6996329Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2021-02-04T21:35:33.6997737Z ##[endgroup]
+2021-02-04T21:35:33.6998463Z ##[group]Fetching the repository
+2021-02-04T21:35:33.7000575Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +2e29049363a3f491365c212c48181e3dda4fc0c3:refs/remotes/pull/13/merge
+2021-02-04T21:35:33.7002031Z remote: Enumerating objects: 11, done.        
+2021-02-04T21:35:33.7002825Z remote: Counting objects:   9% (1/11)        
+2021-02-04T21:35:33.7003578Z remote: Counting objects:  18% (2/11)        
+2021-02-04T21:35:33.7004312Z remote: Counting objects:  27% (3/11)        
+2021-02-04T21:35:33.7005058Z remote: Counting objects:  36% (4/11)        
+2021-02-04T21:35:33.7005796Z remote: Counting objects:  45% (5/11)        
+2021-02-04T21:35:33.7006547Z remote: Counting objects:  54% (6/11)        
+2021-02-04T21:35:33.7007444Z remote: Counting objects:  63% (7/11)        
+2021-02-04T21:35:33.7008318Z remote: Counting objects:  72% (8/11)        
+2021-02-04T21:35:33.7008948Z remote: Counting objects:  81% (9/11)        
+2021-02-04T21:35:33.7009565Z remote: Counting objects:  90% (10/11)        
+2021-02-04T21:35:33.7010195Z remote: Counting objects: 100% (11/11)        
+2021-02-04T21:35:33.7011238Z remote: Counting objects: 100% (11/11), done.        
+2021-02-04T21:35:33.7011921Z remote: Compressing objects:  11% (1/9)        
+2021-02-04T21:35:33.7012920Z remote: Compressing objects:  22% (2/9)        
+2021-02-04T21:35:33.7013601Z remote: Compressing objects:  33% (3/9)        
+2021-02-04T21:35:33.7014261Z remote: Compressing objects:  44% (4/9)        
+2021-02-04T21:35:33.7014930Z remote: Compressing objects:  55% (5/9)        
+2021-02-04T21:35:33.7015589Z remote: Compressing objects:  66% (6/9)        
+2021-02-04T21:35:33.7016257Z remote: Compressing objects:  77% (7/9)        
+2021-02-04T21:35:33.7019615Z remote: Compressing objects:  88% (8/9)        
+2021-02-04T21:35:33.7059724Z remote: Compressing objects: 100% (9/9)        
+2021-02-04T21:35:33.7060682Z remote: Compressing objects: 100% (9/9), done.        
+2021-02-04T21:35:33.7062155Z remote: Total 11 (delta 0), reused 6 (delta 0), pack-reused 0        
+2021-02-04T21:35:33.7063475Z From https://github.com/con/tinuous
+2021-02-04T21:35:33.7064697Z  * [new ref]         2e29049363a3f491365c212c48181e3dda4fc0c3 -> pull/13/merge
+2021-02-04T21:35:33.7065603Z ##[endgroup]
+2021-02-04T21:35:33.7066341Z ##[group]Determining the checkout info
+2021-02-04T21:35:33.7067071Z ##[endgroup]
+2021-02-04T21:35:33.7067739Z ##[group]Checking out the ref
+2021-02-04T21:35:33.7071120Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/13/merge
+2021-02-04T21:35:33.7072344Z Note: switching to 'refs/remotes/pull/13/merge'.
+2021-02-04T21:35:33.7072918Z 
+2021-02-04T21:35:33.7073923Z You are in 'detached HEAD' state. You can look around, make experimental
+2021-02-04T21:35:33.7074978Z changes and commit them, and you can discard any commits you make in this
+2021-02-04T21:35:33.7075966Z state without impacting any branches by switching back to a branch.
+2021-02-04T21:35:33.7076580Z 
+2021-02-04T21:35:33.7077333Z If you want to create a new branch to retain commits you create, you may
+2021-02-04T21:35:33.7078512Z do so (now or later) by using -c with the switch command. Example:
+2021-02-04T21:35:33.7079113Z 
+2021-02-04T21:35:33.7079948Z   git switch -c <new-branch-name>
+2021-02-04T21:35:33.7080468Z 
+2021-02-04T21:35:33.7081090Z Or undo this operation with:
+2021-02-04T21:35:33.7081567Z 
+2021-02-04T21:35:33.7082272Z   git switch -
+2021-02-04T21:35:33.7082711Z 
+2021-02-04T21:35:33.7083559Z Turn off this advice by setting config variable advice.detachedHead to false
+2021-02-04T21:35:33.7084511Z 
+2021-02-04T21:35:33.7102724Z HEAD is now at 2e29049 Merge 265e58212ff7b7023c003241c9bfcb174e923e62 into e5e762623adba98075ccf26d687537db764029ee
+2021-02-04T21:35:33.7103987Z ##[endgroup]
+2021-02-04T21:35:33.7105075Z [command]/usr/bin/git log -1 --format='%H'
+2021-02-04T21:35:33.7106118Z '2e29049363a3f491365c212c48181e3dda4fc0c3'
+2021-02-04T21:35:33.7245032Z ##[group]Run actions/setup-python@v2
+2021-02-04T21:35:33.7245623Z with:
+2021-02-04T21:35:33.7246107Z   python-version: 3.9
+2021-02-04T21:35:33.7247123Z   token: ***
+2021-02-04T21:35:33.7247583Z ##[endgroup]
+2021-02-04T21:35:33.7935474Z Successfully setup CPython (3.9.1)
+2021-02-04T21:35:33.8023679Z ##[group]Run python -m pip install --upgrade pip wheel
+2021-02-04T21:35:33.8024467Z [36;1mpython -m pip install --upgrade pip wheel[0m
+2021-02-04T21:35:33.8025169Z [36;1mpython -m pip install -r requirements.txt[0m
+2021-02-04T21:35:33.8072491Z shell: /usr/bin/bash -e {0}
+2021-02-04T21:35:33.8072988Z env:
+2021-02-04T21:35:33.8073595Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.1/x64
+2021-02-04T21:35:33.8074400Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.1/x64/lib
+2021-02-04T21:35:33.8075008Z ##[endgroup]
+2021-02-04T21:35:34.4045187Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages (21.0.1)
+2021-02-04T21:35:34.8352632Z Collecting wheel
+2021-02-04T21:35:34.9125194Z   Downloading wheel-0.36.2-py2.py3-none-any.whl (35 kB)
+2021-02-04T21:35:34.9534103Z Installing collected packages: wheel
+2021-02-04T21:35:34.9907867Z Successfully installed wheel-0.36.2
+2021-02-04T21:35:35.7945744Z Collecting cfgv~=3.0
+2021-02-04T21:35:35.8477155Z   Downloading cfgv-3.2.0-py2.py3-none-any.whl (7.3 kB)
+2021-02-04T21:35:35.9139196Z Collecting click~=7.0
+2021-02-04T21:35:35.9261690Z   Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+2021-02-04T21:35:35.9708313Z Collecting click-loglevel~=0.2
+2021-02-04T21:35:35.9845309Z   Downloading click_loglevel-0.2.0-py3-none-any.whl (4.2 kB)
+2021-02-04T21:35:36.0463068Z Collecting PyGithub~=1.53
+2021-02-04T21:35:36.0601388Z   Downloading PyGithub-1.54.1-py3-none-any.whl (289 kB)
+2021-02-04T21:35:36.1590429Z Collecting python-dateutil~=2.7
+2021-02-04T21:35:36.1712573Z   Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+2021-02-04T21:35:36.2981945Z Collecting PyYAML~=5.0
+2021-02-04T21:35:36.3117294Z   Downloading PyYAML-5.4.1-cp39-cp39-manylinux1_x86_64.whl (630 kB)
+2021-02-04T21:35:36.4840518Z Collecting requests~=2.20
+2021-02-04T21:35:36.4952041Z   Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+2021-02-04T21:35:36.6419762Z Collecting pyjwt<2.0
+2021-02-04T21:35:36.6542684Z   Downloading PyJWT-1.7.1-py2.py3-none-any.whl (18 kB)
+2021-02-04T21:35:36.7350640Z Collecting deprecated
+2021-02-04T21:35:36.7477943Z   Downloading Deprecated-1.2.11-py2.py3-none-any.whl (9.1 kB)
+2021-02-04T21:35:36.8251672Z Collecting six>=1.5
+2021-02-04T21:35:36.8374798Z   Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+2021-02-04T21:35:37.6743045Z Collecting certifi>=2017.4.17
+2021-02-04T21:35:37.6744748Z   Downloading certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+2021-02-04T21:35:37.6746708Z Collecting urllib3<1.27,>=1.21.1
+2021-02-04T21:35:37.6748173Z   Downloading urllib3-1.26.3-py2.py3-none-any.whl (137 kB)
+2021-02-04T21:35:37.6749436Z Collecting idna<3,>=2.5
+2021-02-04T21:35:37.6750929Z   Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+2021-02-04T21:35:37.6752087Z Collecting chardet<5,>=3.0.2
+2021-02-04T21:35:37.6753605Z   Downloading chardet-4.0.0-py2.py3-none-any.whl (178 kB)
+2021-02-04T21:35:37.6754693Z Collecting wrapt<2,>=1.10
+2021-02-04T21:35:37.6755963Z   Downloading wrapt-1.12.1.tar.gz (27 kB)
+2021-02-04T21:35:37.8544384Z Building wheels for collected packages: wrapt
+2021-02-04T21:35:37.8553398Z   Building wheel for wrapt (setup.py): started
+2021-02-04T21:35:39.3589567Z   Building wheel for wrapt (setup.py): finished with status 'done'
+2021-02-04T21:35:39.3637056Z   Created wheel for wrapt: filename=wrapt-1.12.1-cp39-cp39-linux_x86_64.whl size=78678 sha256=969ec40d34e2381c183b429c83f736c1b33d50af91eff63b415e93f5e5cde2b3
+2021-02-04T21:35:39.3646104Z   Stored in directory: /home/runner/.cache/pip/wheels/98/23/68/efe259aaca055e93b08e74fbe512819c69a2155c11ba3c0f10
+2021-02-04T21:35:39.3647640Z Successfully built wrapt
+2021-02-04T21:35:39.4547848Z Installing collected packages: wrapt, urllib3, idna, chardet, certifi, six, requests, pyjwt, deprecated, click, PyYAML, python-dateutil, PyGithub, click-loglevel, cfgv
+2021-02-04T21:35:40.3722165Z Successfully installed PyGithub-1.54.1 PyYAML-5.4.1 certifi-2020.12.5 cfgv-3.2.0 chardet-4.0.0 click-7.1.2 click-loglevel-0.2.0 deprecated-1.2.11 idna-2.10 pyjwt-1.7.1 python-dateutil-2.8.1 requests-2.25.1 six-1.15.0 urllib3-1.26.3 wrapt-1.12.1
+2021-02-04T21:35:40.4503789Z ##[group]Run python tinuous --help
+2021-02-04T21:35:40.4504426Z [36;1mpython tinuous --help[0m
+2021-02-04T21:35:40.4547363Z shell: /usr/bin/bash -e {0}
+2021-02-04T21:35:40.4547772Z env:
+2021-02-04T21:35:40.4548304Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.1/x64
+2021-02-04T21:35:40.4549050Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.1/x64/lib
+2021-02-04T21:35:40.4549584Z ##[endgroup]
+2021-02-04T21:35:40.6851924Z Usage: tinuous [OPTIONS]
+2021-02-04T21:35:40.6852305Z 
+2021-02-04T21:35:40.6852658Z Options:
+2021-02-04T21:35:40.6853872Z   -c, --config FILE               Read configuration from the given file
+2021-02-04T21:35:40.6854602Z                                   [default: config.yml]
+2021-02-04T21:35:40.6854942Z 
+2021-02-04T21:35:40.6855680Z   -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+2021-02-04T21:35:40.6856394Z                                   Set logging level  [default: INFO]
+2021-02-04T21:35:40.6857330Z   -S, --state FILE                Store program state in the given file
+2021-02-04T21:35:40.6857997Z                                   [default: .dlstate.json]
+2021-02-04T21:35:40.6858351Z 
+2021-02-04T21:35:40.6858990Z   --help                          Show this message and exit.
+2021-02-04T21:35:40.7210216Z Post job cleanup.
+2021-02-04T21:35:40.8310182Z [command]/usr/bin/git version
+2021-02-04T21:35:40.8360129Z git version 2.30.0
+2021-02-04T21:35:40.8395535Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-02-04T21:35:40.8435397Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-02-04T21:35:40.8743037Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-02-04T21:35:40.8774968Z http.https://github.com/.extraheader
+2021-02-04T21:35:40.8787656Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2021-02-04T21:35:40.8829217Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-02-04T21:35:40.9137387Z Cleaning up orphan processes
