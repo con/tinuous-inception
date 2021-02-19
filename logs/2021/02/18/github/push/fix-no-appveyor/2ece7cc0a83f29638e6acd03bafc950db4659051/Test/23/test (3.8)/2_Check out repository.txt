@@ -1,0 +1,81 @@
+2021-02-18T15:04:00.3956668Z ##[group]Run actions/checkout@v2
+2021-02-18T15:04:00.3957384Z with:
+2021-02-18T15:04:00.3958299Z   repository: con/tinuous
+2021-02-18T15:04:00.3959474Z   token: ***
+2021-02-18T15:04:00.3959925Z   ssh-strict: true
+2021-02-18T15:04:00.3960466Z   persist-credentials: true
+2021-02-18T15:04:00.3961413Z   clean: true
+2021-02-18T15:04:00.3961852Z   fetch-depth: 1
+2021-02-18T15:04:00.3962277Z   lfs: false
+2021-02-18T15:04:00.3962713Z   submodules: false
+2021-02-18T15:04:00.3963145Z ##[endgroup]
+2021-02-18T15:04:00.8203736Z Syncing repository: con/tinuous
+2021-02-18T15:04:00.8292211Z ##[group]Getting Git version info
+2021-02-18T15:04:00.8294065Z Working directory is '/home/runner/work/tinuous/tinuous'
+2021-02-18T15:04:01.4362696Z [command]/usr/bin/git version
+2021-02-18T15:04:01.4363348Z git version 2.30.0
+2021-02-18T15:04:01.4364832Z ##[endgroup]
+2021-02-18T15:04:01.4365884Z Deleting the contents of '/home/runner/work/tinuous/tinuous'
+2021-02-18T15:04:01.4367698Z ##[group]Initializing the repository
+2021-02-18T15:04:01.4368608Z [command]/usr/bin/git init /home/runner/work/tinuous/tinuous
+2021-02-18T15:04:01.4369767Z hint: Using 'master' as the name for the initial branch. This default branch name
+2021-02-18T15:04:01.4370782Z hint: is subject to change. To configure the initial branch name to use in all
+2021-02-18T15:04:01.4371770Z hint: of your new repositories, which will suppress this warning, call:
+2021-02-18T15:04:01.4372533Z hint: 
+2021-02-18T15:04:01.4373414Z hint: 	git config --global init.defaultBranch <name>
+2021-02-18T15:04:01.4374132Z hint: 
+2021-02-18T15:04:01.4375329Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2021-02-18T15:04:01.4376556Z hint: 'development'. The just-created branch can be renamed via this command:
+2021-02-18T15:04:01.4377331Z hint: 
+2021-02-18T15:04:01.4380369Z hint: 	git branch -m <name>
+2021-02-18T15:04:01.4381345Z Initialized empty Git repository in /home/runner/work/tinuous/tinuous/.git/
+2021-02-18T15:04:01.4382426Z [command]/usr/bin/git remote add origin https://github.com/con/tinuous
+2021-02-18T15:04:01.4383290Z ##[endgroup]
+2021-02-18T15:04:01.4384007Z ##[group]Disabling automatic garbage collection
+2021-02-18T15:04:01.4385601Z [command]/usr/bin/git config --local gc.auto 0
+2021-02-18T15:04:01.4386318Z ##[endgroup]
+2021-02-18T15:04:01.4388427Z ##[group]Setting up auth
+2021-02-18T15:04:01.4389535Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-02-18T15:04:01.4391569Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-02-18T15:04:01.4393367Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-02-18T15:04:01.4395539Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-02-18T15:04:01.4397706Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2021-02-18T15:04:01.4398753Z ##[endgroup]
+2021-02-18T15:04:01.4399382Z ##[group]Fetching the repository
+2021-02-18T15:04:01.4401382Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +2ece7cc0a83f29638e6acd03bafc950db4659051:refs/remotes/origin/fix-no-appveyor
+2021-02-18T15:04:01.4403068Z remote: Enumerating objects: 11, done.        
+2021-02-18T15:04:01.4404896Z remote: Counting objects:   9% (1/11)        
+2021-02-18T15:04:01.4406006Z remote: Counting objects:  18% (2/11)        
+2021-02-18T15:04:01.4406676Z remote: Counting objects:  27% (3/11)        
+2021-02-18T15:04:01.4407362Z remote: Counting objects:  36% (4/11)        
+2021-02-18T15:04:01.4408022Z remote: Counting objects:  45% (5/11)        
+2021-02-18T15:04:01.4408691Z remote: Counting objects:  54% (6/11)        
+2021-02-18T15:04:01.4409351Z remote: Counting objects:  63% (7/11)        
+2021-02-18T15:04:01.4410262Z remote: Counting objects:  72% (8/11)        
+2021-02-18T15:04:01.4410929Z remote: Counting objects:  81% (9/11)        
+2021-02-18T15:04:01.4411617Z remote: Counting objects:  90% (10/11)        
+2021-02-18T15:04:01.4412284Z remote: Counting objects: 100% (11/11)        
+2021-02-18T15:04:01.4412997Z remote: Counting objects: 100% (11/11), done.        
+2021-02-18T15:04:01.4413733Z remote: Compressing objects:  11% (1/9)        
+2021-02-18T15:04:01.4414472Z remote: Compressing objects:  22% (2/9)        
+2021-02-18T15:04:01.4415192Z remote: Compressing objects:  33% (3/9)        
+2021-02-18T15:04:01.4415922Z remote: Compressing objects:  44% (4/9)        
+2021-02-18T15:04:01.4416638Z remote: Compressing objects:  55% (5/9)        
+2021-02-18T15:04:01.4417376Z remote: Compressing objects:  66% (6/9)        
+2021-02-18T15:04:01.4418461Z remote: Compressing objects:  77% (7/9)        
+2021-02-18T15:04:01.4419506Z remote: Compressing objects:  88% (8/9)        
+2021-02-18T15:04:01.4420239Z remote: Compressing objects: 100% (9/9)        
+2021-02-18T15:04:01.4421005Z remote: Compressing objects: 100% (9/9), done.        
+2021-02-18T15:04:01.4422216Z remote: Total 11 (delta 0), reused 7 (delta 0), pack-reused 0        
+2021-02-18T15:04:01.4423094Z From https://github.com/con/tinuous
+2021-02-18T15:04:01.4424455Z  * [new ref]         2ece7cc0a83f29638e6acd03bafc950db4659051 -> origin/fix-no-appveyor
+2021-02-18T15:04:01.4425525Z ##[endgroup]
+2021-02-18T15:04:01.4426188Z ##[group]Determining the checkout info
+2021-02-18T15:04:01.4427801Z ##[endgroup]
+2021-02-18T15:04:01.4428416Z ##[group]Checking out the ref
+2021-02-18T15:04:01.4430143Z [command]/usr/bin/git checkout --progress --force -B fix-no-appveyor refs/remotes/origin/fix-no-appveyor
+2021-02-18T15:04:01.4431589Z Switched to a new branch 'fix-no-appveyor'
+2021-02-18T15:04:01.4432843Z Branch 'fix-no-appveyor' set up to track remote branch 'fix-no-appveyor' from 'origin'.
+2021-02-18T15:04:01.4433776Z ##[endgroup]
+2021-02-18T15:04:01.4434618Z [command]/usr/bin/git log -1 --format='%H'
+2021-02-18T15:04:01.4435701Z '2ece7cc0a83f29638e6acd03bafc950db4659051'
