@@ -1,0 +1,83 @@
+2021-02-19T23:17:32.6287028Z ##[group]Run actions/checkout@v2
+2021-02-19T23:17:32.6287730Z with:
+2021-02-19T23:17:32.6288201Z   repository: con/tinuous
+2021-02-19T23:17:32.6289070Z   token: ***
+2021-02-19T23:17:32.6289534Z   ssh-strict: true
+2021-02-19T23:17:32.6290026Z   persist-credentials: true
+2021-02-19T23:17:32.6290490Z   clean: true
+2021-02-19T23:17:32.6290946Z   fetch-depth: 1
+2021-02-19T23:17:32.6291333Z   lfs: false
+2021-02-19T23:17:32.6291806Z   submodules: false
+2021-02-19T23:17:32.6292404Z ##[endgroup]
+2021-02-19T23:17:33.0763134Z Syncing repository: con/tinuous
+2021-02-19T23:17:33.0764317Z ##[group]Getting Git version info
+2021-02-19T23:17:33.0766606Z Working directory is '/home/runner/work/tinuous/tinuous'
+2021-02-19T23:17:33.0768354Z [command]/usr/bin/git version
+2021-02-19T23:17:33.0897417Z git version 2.30.0
+2021-02-19T23:17:33.6048390Z ##[endgroup]
+2021-02-19T23:17:33.6055525Z Deleting the contents of '/home/runner/work/tinuous/tinuous'
+2021-02-19T23:17:33.6057669Z ##[group]Initializing the repository
+2021-02-19T23:17:33.6058650Z [command]/usr/bin/git init /home/runner/work/tinuous/tinuous
+2021-02-19T23:17:33.6059795Z hint: Using 'master' as the name for the initial branch. This default branch name
+2021-02-19T23:17:33.6061366Z hint: is subject to change. To configure the initial branch name to use in all
+2021-02-19T23:17:33.6062419Z hint: of your new repositories, which will suppress this warning, call:
+2021-02-19T23:17:33.6063202Z hint: 
+2021-02-19T23:17:33.6064175Z hint: 	git config --global init.defaultBranch <name>
+2021-02-19T23:17:33.6065041Z hint: 
+2021-02-19T23:17:33.6066104Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2021-02-19T23:17:33.6067410Z hint: 'development'. The just-created branch can be renamed via this command:
+2021-02-19T23:17:33.6068425Z hint: 
+2021-02-19T23:17:33.6069427Z hint: 	git branch -m <name>
+2021-02-19T23:17:33.6073316Z Initialized empty Git repository in /home/runner/work/tinuous/tinuous/.git/
+2021-02-19T23:17:33.6075188Z [command]/usr/bin/git remote add origin https://github.com/con/tinuous
+2021-02-19T23:17:33.6106419Z ##[endgroup]
+2021-02-19T23:17:33.6107443Z ##[group]Disabling automatic garbage collection
+2021-02-19T23:17:33.6109391Z [command]/usr/bin/git config --local gc.auto 0
+2021-02-19T23:17:33.6110349Z ##[endgroup]
+2021-02-19T23:17:33.6113969Z ##[group]Setting up auth
+2021-02-19T23:17:33.6115414Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-02-19T23:17:33.6117439Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-02-19T23:17:33.6119319Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-02-19T23:17:33.6122519Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-02-19T23:17:33.6125425Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2021-02-19T23:17:33.6126979Z ##[endgroup]
+2021-02-19T23:17:33.6144813Z ##[group]Fetching the repository
+2021-02-19T23:17:33.6146880Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +c8ce33c16405936c560b857aaf97444640c62556:refs/remotes/origin/master
+2021-02-19T23:17:33.6149198Z remote: Enumerating objects: 12, done.        
+2021-02-19T23:17:33.6150118Z remote: Counting objects:   8% (1/12)        
+2021-02-19T23:17:33.6151028Z remote: Counting objects:  16% (2/12)        
+2021-02-19T23:17:33.6151606Z remote: Counting objects:  25% (3/12)        
+2021-02-19T23:17:33.6152644Z remote: Counting objects:  33% (4/12)        
+2021-02-19T23:17:33.6153409Z remote: Counting objects:  41% (5/12)        
+2021-02-19T23:17:33.6154071Z remote: Counting objects:  50% (6/12)        
+2021-02-19T23:17:33.6154782Z remote: Counting objects:  58% (7/12)        
+2021-02-19T23:17:33.6155692Z remote: Counting objects:  66% (8/12)        
+2021-02-19T23:17:33.6156609Z remote: Counting objects:  75% (9/12)        
+2021-02-19T23:17:33.6157293Z remote: Counting objects:  83% (10/12)        
+2021-02-19T23:17:33.6158032Z remote: Counting objects:  91% (11/12)        
+2021-02-19T23:17:33.6158734Z remote: Counting objects: 100% (12/12)        
+2021-02-19T23:17:33.6159466Z remote: Counting objects: 100% (12/12), done.        
+2021-02-19T23:17:33.6160352Z remote: Compressing objects:  10% (1/10)        
+2021-02-19T23:17:33.6161327Z remote: Compressing objects:  20% (2/10)        
+2021-02-19T23:17:33.6162028Z remote: Compressing objects:  30% (3/10)        
+2021-02-19T23:17:33.6162793Z remote: Compressing objects:  40% (4/10)        
+2021-02-19T23:17:33.6163492Z remote: Compressing objects:  50% (5/10)        
+2021-02-19T23:17:33.6164266Z remote: Compressing objects:  60% (6/10)        
+2021-02-19T23:17:33.6165017Z remote: Compressing objects:  70% (7/10)        
+2021-02-19T23:17:33.6165964Z remote: Compressing objects:  80% (8/10)        
+2021-02-19T23:17:33.6166641Z remote: Compressing objects:  90% (9/10)        
+2021-02-19T23:17:33.6167569Z remote: Compressing objects: 100% (10/10)        
+2021-02-19T23:17:33.6168710Z remote: Compressing objects: 100% (10/10), done.        
+2021-02-19T23:17:33.6170582Z remote: Total 12 (delta 0), reused 7 (delta 0), pack-reused 0        
+2021-02-19T23:17:33.6171902Z From https://github.com/con/tinuous
+2021-02-19T23:17:33.6173396Z  * [new ref]         c8ce33c16405936c560b857aaf97444640c62556 -> origin/master
+2021-02-19T23:17:33.6174580Z ##[endgroup]
+2021-02-19T23:17:33.6175622Z ##[group]Determining the checkout info
+2021-02-19T23:17:33.6176468Z ##[endgroup]
+2021-02-19T23:17:33.6177183Z ##[group]Checking out the ref
+2021-02-19T23:17:33.6178290Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2021-02-19T23:17:33.6179507Z Reset branch 'master'
+2021-02-19T23:17:33.6180551Z Branch 'master' set up to track remote branch 'master' from 'origin'.
+2021-02-19T23:17:33.6181471Z ##[endgroup]
+2021-02-19T23:17:33.6182446Z [command]/usr/bin/git log -1 --format='%H'
+2021-02-19T23:17:33.6183490Z 'c8ce33c16405936c560b857aaf97444640c62556'
