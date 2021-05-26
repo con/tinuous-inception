@@ -25,10 +25,10 @@ jobs:
       - name: Install tinuous dependencies
         run: |
           python -m pip install --upgrade pip wheel
-          python -m pip install -r tinuous/requirements.txt
+          python -m pip install ./tinuous
 
       - name: Run tinuous
-        run: python tinuous/tinuous fetch
+        run: tinuous fetch
         env:
           GITHUB_TOKEN: ${{ secrets.DANDIBOT_GITHUB_TOKEN }}
           TRAVIS_TOKEN: ${{ secrets.TRAVIS_TOKEN }}
