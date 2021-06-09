@@ -1,0 +1,53 @@
+2021-06-08T19:59:00.6008113Z ##[group]Run tox -e typing
+2021-06-08T19:59:00.6008851Z [36;1mtox -e typing[0m
+2021-06-08T19:59:00.6051072Z shell: /usr/bin/bash -e {0}
+2021-06-08T19:59:00.6051431Z env:
+2021-06-08T19:59:00.6051909Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.10/x64
+2021-06-08T19:59:00.6052540Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.10/x64/lib
+2021-06-08T19:59:00.6053017Z ##[endgroup]
+2021-06-08T19:59:00.8170206Z .package create: /home/runner/work/tinuous/tinuous/.tox/.package
+2021-06-08T19:59:01.3818078Z .package installdeps: setuptools >= 46.4.0, wheel ~= 0.32
+2021-06-08T19:59:05.1749779Z typing create: /home/runner/work/tinuous/tinuous/.tox/typing
+2021-06-08T19:59:05.4511062Z typing installdeps: mypy~=0.570, pytest~=6.0, pytest-cov~=2.0, pytest-mock~=3.0
+2021-06-08T19:59:11.1629389Z typing inst: /home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.2.0+36.gcd1fe71.tar.gz
+2021-06-08T19:59:21.7700130Z typing installed: attrs==21.2.0,certifi==2021.5.30,cffi==1.14.5,chardet==4.0.0,click==8.0.1,click-loglevel==0.4.0.post1,coverage==5.5,Deprecated==1.2.12,idna==2.10,in-place==0.5.0,iniconfig==1.1.1,mypy==0.900,mypy-extensions==0.4.3,packaging==20.9,pluggy==0.13.1,py==1.10.0,pycparser==2.20,pydantic==1.8.2,PyGithub==1.55,PyJWT==2.1.0,PyNaCl==1.4.0,pyparsing==2.4.7,pytest==6.2.4,pytest-cov==2.12.1,pytest-mock==3.6.1,python-dateutil==2.8.1,python-dotenv==0.17.1,PyYAML==5.4.1,requests==2.25.1,six==1.16.0,tinuous @ file:///home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.2.0%2B36.gcd1fe71.tar.gz,toml==0.10.2,typing-extensions==3.10.0.0,urllib3==1.26.5,wrapt==1.12.1
+2021-06-08T19:59:21.7704320Z typing run-test-pre: PYTHONHASHSEED='498080493'
+2021-06-08T19:59:21.7706308Z typing run-test: commands[0] | mypy src test
+2021-06-08T19:59:26.7071729Z src/tinuous/util.py:11: error: Library stubs not installed for "requests" (or
+2021-06-08T19:59:26.7073398Z incompatible with Python 3.8)  [import]
+2021-06-08T19:59:26.7074493Z     import requests
+2021-06-08T19:59:26.7075250Z     ^
+2021-06-08T19:59:26.7076697Z src/tinuous/util.py:85: error: Item "int" of "Union[int, str]" has no attribute
+2021-06-08T19:59:26.7078792Z "isdigit"  [union-attr]
+2021-06-08T19:59:26.7079764Z             if key.isdigit():
+2021-06-08T19:59:26.7080552Z                ^
+2021-06-08T19:59:28.7021062Z src/tinuous/base.py:11: error: Library stubs not installed for "requests" (or
+2021-06-08T19:59:28.7021834Z incompatible with Python 3.8)  [import]
+2021-06-08T19:59:28.7022349Z     import requests
+2021-06-08T19:59:28.7022705Z     ^
+2021-06-08T19:59:28.7024107Z src/tinuous/base.py:11: note: Hint: "python3 -m pip install types-requests"
+2021-06-08T19:59:28.7181995Z src/tinuous/travis.py:8: error: Library stubs not installed for
+2021-06-08T19:59:28.7183837Z "dateutil.parser" (or incompatible with Python 3.8)  [import]
+2021-06-08T19:59:28.7185382Z     from dateutil.parser import isoparse
+2021-06-08T19:59:28.7186377Z     ^
+2021-06-08T19:59:28.7425312Z src/tinuous/github.py:16: error: Library stubs not installed for "requests" (or
+2021-06-08T19:59:28.7426631Z incompatible with Python 3.8)  [import]
+2021-06-08T19:59:28.7427481Z     import requests
+2021-06-08T19:59:28.7428074Z     ^
+2021-06-08T19:59:28.7536327Z src/tinuous/appveyor.py:7: error: Library stubs not installed for
+2021-06-08T19:59:28.7537740Z "dateutil.parser" (or incompatible with Python 3.8)  [import]
+2021-06-08T19:59:28.7539000Z     from dateutil.parser import isoparse
+2021-06-08T19:59:28.7539799Z     ^
+2021-06-08T19:59:28.7541659Z src/tinuous/appveyor.py:7: note: Hint: "python3 -m pip install types-python-dateutil"
+2021-06-08T19:59:30.1614620Z src/tinuous/__main__.py:12: error: Library stubs not installed for "yaml" (or
+2021-06-08T19:59:30.1616205Z incompatible with Python 3.8)  [import]
+2021-06-08T19:59:30.1617372Z     from yaml import safe_load
+2021-06-08T19:59:30.1618207Z     ^
+2021-06-08T19:59:30.1620299Z src/tinuous/__main__.py:12: note: Hint: "python3 -m pip install types-PyYAML"
+2021-06-08T19:59:30.1622664Z src/tinuous/__main__.py:12: note: (or run "mypy --install-types" to install all missing stub packages)
+2021-06-08T19:59:30.1626063Z src/tinuous/__main__.py:12: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+2021-06-08T19:59:30.1974619Z Found 7 errors in 6 files (checked 9 source files)
+2021-06-08T19:59:30.7575628Z ERROR: InvocationError for command /home/runner/work/tinuous/tinuous/.tox/typing/bin/mypy src test (exited with code 1)
+2021-06-08T19:59:30.7591864Z ___________________________________ summary ____________________________________
+2021-06-08T19:59:30.7592688Z ERROR:   typing: commands failed
+2021-06-08T19:59:30.7845451Z ##[error]Process completed with exit code 1.
