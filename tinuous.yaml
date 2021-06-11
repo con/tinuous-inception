@@ -1,0 +1,17 @@
+repo: con/tinuous
+vars:
+  prefix: 'logs/{year}/{month}/{day}/{ci}/{type}/{type_id}/{commit}'
+ci:
+  github:
+    paths:
+      logs: '{prefix}/{wf_name}/{number}/'
+    workflows:
+      - test.yml
+  travis:
+    paths:
+      logs: '{prefix}/{number}/{job}.txt'
+  appveyor:
+    paths:
+      logs: '{prefix}/{number}/{job}.txt'
+    accountName: yarikoptic
+since: 2021-02-01T00:00:00Z
