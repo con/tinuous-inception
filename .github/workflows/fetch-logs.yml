@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout this repository
         uses: actions/checkout@v2
+        with:
+          path: tinuous-inception
 
       - name: Checkout con/tinuous
         uses: actions/checkout@v2
@@ -29,6 +31,7 @@ jobs:
 
       - name: Run tinuous
         run: tinuous fetch
+        working-directory: tinuous-inception
         env:
           GITHUB_TOKEN: ${{ secrets.DANDIBOT_GITHUB_TOKEN }}
           TRAVIS_TOKEN: ${{ secrets.TRAVIS_TOKEN }}
@@ -45,5 +48,6 @@ jobs:
                git push
           else echo "No changes to commit"
           fi
+        working-directory: tinuous-inception
 
 # vim:set sts=2:
