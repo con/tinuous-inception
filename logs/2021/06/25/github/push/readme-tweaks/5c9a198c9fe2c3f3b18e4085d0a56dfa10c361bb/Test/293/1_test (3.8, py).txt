@@ -1,0 +1,678 @@
+2021-06-25T18:57:10.2004859Z Found online and idle hosted runner(s) in the current repository's organization account that matches the required labels: 'ubuntu-latest'
+2021-06-25T18:57:10.2004910Z Waiting for a hosted runner in 'organization' to pick this job...
+2021-06-25T18:57:16.9920868Z Current runner version: '2.278.0'
+2021-06-25T18:57:16.9945769Z ##[group]Operating System
+2021-06-25T18:57:16.9946572Z Ubuntu
+2021-06-25T18:57:16.9947057Z 20.04.2
+2021-06-25T18:57:16.9947423Z LTS
+2021-06-25T18:57:16.9948051Z ##[endgroup]
+2021-06-25T18:57:16.9948572Z ##[group]Virtual Environment
+2021-06-25T18:57:16.9949166Z Environment: ubuntu-20.04
+2021-06-25T18:57:16.9949688Z Version: 20210614.1
+2021-06-25T18:57:16.9950700Z Included Software: https://github.com/actions/virtual-environments/blob/ubuntu20/20210614.1/images/linux/Ubuntu2004-README.md
+2021-06-25T18:57:16.9952195Z Image Release: https://github.com/actions/virtual-environments/releases/tag/ubuntu20%2F20210614.1
+2021-06-25T18:57:16.9952926Z ##[endgroup]
+2021-06-25T18:57:16.9954613Z ##[group]GITHUB_TOKEN Permissions
+2021-06-25T18:57:16.9955730Z Actions: write
+2021-06-25T18:57:16.9956153Z Checks: write
+2021-06-25T18:57:16.9956637Z Contents: write
+2021-06-25T18:57:16.9957072Z Deployments: write
+2021-06-25T18:57:16.9957647Z Discussions: write
+2021-06-25T18:57:16.9958184Z Issues: write
+2021-06-25T18:57:16.9958580Z Metadata: read
+2021-06-25T18:57:16.9959069Z Packages: write
+2021-06-25T18:57:16.9959506Z PullRequests: write
+2021-06-25T18:57:16.9960070Z RepositoryProjects: write
+2021-06-25T18:57:16.9960579Z SecurityEvents: write
+2021-06-25T18:57:16.9961068Z Statuses: write
+2021-06-25T18:57:16.9961623Z ##[endgroup]
+2021-06-25T18:57:16.9964409Z Prepare workflow directory
+2021-06-25T18:57:17.0626887Z Prepare all required actions
+2021-06-25T18:57:17.0637107Z Getting action download info
+2021-06-25T18:57:17.5089207Z Download action repository 'actions/checkout@v2'
+2021-06-25T18:57:19.4846419Z Download action repository 'actions/setup-python@v2'
+2021-06-25T18:57:19.9277072Z Download action repository 'codecov/codecov-action@v1'
+2021-06-25T18:57:20.5590312Z ##[group]Run actions/checkout@v2
+2021-06-25T18:57:20.5590895Z with:
+2021-06-25T18:57:20.5591275Z   fetch-depth: 0
+2021-06-25T18:57:20.5591776Z   repository: con/tinuous
+2021-06-25T18:57:20.5592606Z   token: ***
+2021-06-25T18:57:20.5593041Z   ssh-strict: true
+2021-06-25T18:57:20.5593461Z   persist-credentials: true
+2021-06-25T18:57:20.5593912Z   clean: true
+2021-06-25T18:57:20.5594215Z   lfs: false
+2021-06-25T18:57:20.5594615Z   submodules: false
+2021-06-25T18:57:20.5594998Z ##[endgroup]
+2021-06-25T18:57:21.5280178Z Syncing repository: con/tinuous
+2021-06-25T18:57:21.5280955Z ##[group]Getting Git version info
+2021-06-25T18:57:21.5282060Z Working directory is '/home/runner/work/tinuous/tinuous'
+2021-06-25T18:57:21.5282684Z [command]/usr/bin/git version
+2021-06-25T18:57:21.5283107Z git version 2.32.0
+2021-06-25T18:57:21.5283961Z ##[endgroup]
+2021-06-25T18:57:21.5284720Z Deleting the contents of '/home/runner/work/tinuous/tinuous'
+2021-06-25T18:57:21.5285908Z ##[group]Initializing the repository
+2021-06-25T18:57:21.5291396Z [command]/usr/bin/git init /home/runner/work/tinuous/tinuous
+2021-06-25T18:57:21.5292781Z hint: Using 'master' as the name for the initial branch. This default branch name
+2021-06-25T18:57:21.5293566Z hint: is subject to change. To configure the initial branch name to use in all
+2021-06-25T18:57:21.5294372Z hint: of your new repositories, which will suppress this warning, call:
+2021-06-25T18:57:21.5294912Z hint: 
+2021-06-25T18:57:21.5295618Z hint: 	git config --global init.defaultBranch <name>
+2021-06-25T18:57:21.5296120Z hint: 
+2021-06-25T18:57:21.5352537Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2021-06-25T18:57:21.5353718Z hint: 'development'. The just-created branch can be renamed via this command:
+2021-06-25T18:57:21.5354376Z hint: 
+2021-06-25T18:57:21.5357410Z hint: 	git branch -m <name>
+2021-06-25T18:57:21.5358034Z Initialized empty Git repository in /home/runner/work/tinuous/tinuous/.git/
+2021-06-25T18:57:21.5358853Z [command]/usr/bin/git remote add origin https://github.com/con/tinuous
+2021-06-25T18:57:21.5359473Z ##[endgroup]
+2021-06-25T18:57:21.5359977Z ##[group]Disabling automatic garbage collection
+2021-06-25T18:57:21.5360739Z [command]/usr/bin/git config --local gc.auto 0
+2021-06-25T18:57:21.5361471Z ##[endgroup]
+2021-06-25T18:57:21.5362958Z ##[group]Setting up auth
+2021-06-25T18:57:21.5363840Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-06-25T18:57:21.5365211Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-06-25T18:57:21.5366588Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-06-25T18:57:21.5368466Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-06-25T18:57:21.5370110Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2021-06-25T18:57:21.5370850Z ##[endgroup]
+2021-06-25T18:57:21.5371273Z ##[group]Fetching the repository
+2021-06-25T18:57:21.5372942Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2021-06-25T18:57:21.5373904Z remote: Enumerating objects: 802, done.        
+2021-06-25T18:57:21.5374403Z remote: Counting objects:   0% (1/456)        
+2021-06-25T18:57:21.5374853Z remote: Counting objects:   1% (5/456)        
+2021-06-25T18:57:21.5375319Z remote: Counting objects:   2% (10/456)        
+2021-06-25T18:57:21.5375781Z remote: Counting objects:   3% (14/456)        
+2021-06-25T18:57:21.5376239Z remote: Counting objects:   4% (19/456)        
+2021-06-25T18:57:21.5376706Z remote: Counting objects:   5% (23/456)        
+2021-06-25T18:57:21.5377338Z remote: Counting objects:   6% (28/456)        
+2021-06-25T18:57:21.5377844Z remote: Counting objects:   7% (32/456)        
+2021-06-25T18:57:21.5378295Z remote: Counting objects:   8% (37/456)        
+2021-06-25T18:57:21.5378743Z remote: Counting objects:   9% (42/456)        
+2021-06-25T18:57:21.5379779Z remote: Counting objects:  10% (46/456)        
+2021-06-25T18:57:21.5380938Z remote: Counting objects:  11% (51/456)        
+2021-06-25T18:57:21.5381655Z remote: Counting objects:  12% (55/456)        
+2021-06-25T18:57:21.5382363Z remote: Counting objects:  13% (60/456)        
+2021-06-25T18:57:21.5382904Z remote: Counting objects:  14% (64/456)        
+2021-06-25T18:57:21.5383610Z remote: Counting objects:  15% (69/456)        
+2021-06-25T18:57:21.5384296Z remote: Counting objects:  16% (73/456)        
+2021-06-25T18:57:21.5385114Z remote: Counting objects:  17% (78/456)        
+2021-06-25T18:57:21.5385834Z remote: Counting objects:  18% (83/456)        
+2021-06-25T18:57:21.5386677Z remote: Counting objects:  19% (87/456)        
+2021-06-25T18:57:21.5387155Z remote: Counting objects:  20% (92/456)        
+2021-06-25T18:57:21.5388127Z remote: Counting objects:  21% (96/456)        
+2021-06-25T18:57:21.5388613Z remote: Counting objects:  22% (101/456)        
+2021-06-25T18:57:21.5389332Z remote: Counting objects:  23% (105/456)        
+2021-06-25T18:57:21.5389973Z remote: Counting objects:  24% (110/456)        
+2021-06-25T18:57:21.5390643Z remote: Counting objects:  25% (114/456)        
+2021-06-25T18:57:21.5391138Z remote: Counting objects:  26% (119/456)        
+2021-06-25T18:57:21.5391808Z remote: Counting objects:  27% (124/456)        
+2021-06-25T18:57:21.5392596Z remote: Counting objects:  28% (128/456)        
+2021-06-25T18:57:21.5393220Z remote: Counting objects:  29% (133/456)        
+2021-06-25T18:57:21.5393895Z remote: Counting objects:  30% (137/456)        
+2021-06-25T18:57:21.5394894Z remote: Counting objects:  31% (142/456)        
+2021-06-25T18:57:21.5395937Z remote: Counting objects:  32% (146/456)        
+2021-06-25T18:57:21.5396442Z remote: Counting objects:  33% (151/456)        
+2021-06-25T18:57:21.5396942Z remote: Counting objects:  34% (156/456)        
+2021-06-25T18:57:21.5397618Z remote: Counting objects:  35% (160/456)        
+2021-06-25T18:57:21.5398510Z remote: Counting objects:  36% (165/456)        
+2021-06-25T18:57:21.5399283Z remote: Counting objects:  37% (169/456)        
+2021-06-25T18:57:21.5399810Z remote: Counting objects:  38% (174/456)        
+2021-06-25T18:57:21.5400477Z remote: Counting objects:  39% (178/456)        
+2021-06-25T18:57:21.5401131Z remote: Counting objects:  40% (183/456)        
+2021-06-25T18:57:21.5401613Z remote: Counting objects:  41% (187/456)        
+2021-06-25T18:57:21.5402281Z remote: Counting objects:  42% (192/456)        
+2021-06-25T18:57:21.5403452Z remote: Counting objects:  43% (197/456)        
+2021-06-25T18:57:21.5403917Z remote: Counting objects:  44% (201/456)        
+2021-06-25T18:57:21.5404381Z remote: Counting objects:  45% (206/456)        
+2021-06-25T18:57:21.5405022Z remote: Counting objects:  46% (210/456)        
+2021-06-25T18:57:21.5405702Z remote: Counting objects:  47% (215/456)        
+2021-06-25T18:57:21.5406341Z remote: Counting objects:  48% (219/456)        
+2021-06-25T18:57:21.5407002Z remote: Counting objects:  49% (224/456)        
+2021-06-25T18:57:21.5407495Z remote: Counting objects:  50% (228/456)        
+2021-06-25T18:57:21.5407989Z remote: Counting objects:  51% (233/456)        
+2021-06-25T18:57:21.5408679Z remote: Counting objects:  52% (238/456)        
+2021-06-25T18:57:21.5409339Z remote: Counting objects:  53% (242/456)        
+2021-06-25T18:57:21.5409834Z remote: Counting objects:  54% (247/456)        
+2021-06-25T18:57:21.5410325Z remote: Counting objects:  55% (251/456)        
+2021-06-25T18:57:21.5410831Z remote: Counting objects:  56% (256/456)        
+2021-06-25T18:57:21.5411333Z remote: Counting objects:  57% (260/456)        
+2021-06-25T18:57:21.5412095Z remote: Counting objects:  58% (265/456)        
+2021-06-25T18:57:21.5412764Z remote: Counting objects:  59% (270/456)        
+2021-06-25T18:57:21.5413835Z remote: Counting objects:  60% (274/456)        
+2021-06-25T18:57:21.5414319Z remote: Counting objects:  61% (279/456)        
+2021-06-25T18:57:21.5414810Z remote: Counting objects:  62% (283/456)        
+2021-06-25T18:57:21.5415320Z remote: Counting objects:  63% (288/456)        
+2021-06-25T18:57:21.5415985Z remote: Counting objects:  64% (292/456)        
+2021-06-25T18:57:21.5416635Z remote: Counting objects:  65% (297/456)        
+2021-06-25T18:57:21.5417112Z remote: Counting objects:  66% (301/456)        
+2021-06-25T18:57:21.5417585Z remote: Counting objects:  67% (306/456)        
+2021-06-25T18:57:21.5418063Z remote: Counting objects:  68% (311/456)        
+2021-06-25T18:57:21.5418542Z remote: Counting objects:  69% (315/456)        
+2021-06-25T18:57:21.5419024Z remote: Counting objects:  70% (320/456)        
+2021-06-25T18:57:21.5419501Z remote: Counting objects:  71% (324/456)        
+2021-06-25T18:57:21.5419993Z remote: Counting objects:  72% (329/456)        
+2021-06-25T18:57:21.5420474Z remote: Counting objects:  73% (333/456)        
+2021-06-25T18:57:21.5421134Z remote: Counting objects:  74% (338/456)        
+2021-06-25T18:57:21.5421785Z remote: Counting objects:  75% (342/456)        
+2021-06-25T18:57:21.5422273Z remote: Counting objects:  76% (347/456)        
+2021-06-25T18:57:21.5422754Z remote: Counting objects:  77% (352/456)        
+2021-06-25T18:57:21.5423231Z remote: Counting objects:  78% (356/456)        
+2021-06-25T18:57:21.5423706Z remote: Counting objects:  79% (361/456)        
+2021-06-25T18:57:21.5424176Z remote: Counting objects:  80% (365/456)        
+2021-06-25T18:57:21.5424658Z remote: Counting objects:  81% (370/456)        
+2021-06-25T18:57:21.5425140Z remote: Counting objects:  82% (374/456)        
+2021-06-25T18:57:21.5425617Z remote: Counting objects:  83% (379/456)        
+2021-06-25T18:57:21.5426095Z remote: Counting objects:  84% (384/456)        
+2021-06-25T18:57:21.5426583Z remote: Counting objects:  85% (388/456)        
+2021-06-25T18:57:21.5427067Z remote: Counting objects:  86% (393/456)        
+2021-06-25T18:57:21.5427719Z remote: Counting objects:  87% (397/456)        
+2021-06-25T18:57:21.5428228Z remote: Counting objects:  88% (402/456)        
+2021-06-25T18:57:21.5428832Z remote: Counting objects:  89% (406/456)        
+2021-06-25T18:57:21.5429339Z remote: Counting objects:  90% (411/456)        
+2021-06-25T18:57:21.5429837Z remote: Counting objects:  91% (415/456)        
+2021-06-25T18:57:21.5430351Z remote: Counting objects:  92% (420/456)        
+2021-06-25T18:57:21.5430855Z remote: Counting objects:  93% (425/456)        
+2021-06-25T18:57:21.5431349Z remote: Counting objects:  94% (429/456)        
+2021-06-25T18:57:21.5431840Z remote: Counting objects:  95% (434/456)        
+2021-06-25T18:57:21.5432327Z remote: Counting objects:  96% (438/456)        
+2021-06-25T18:57:21.5432822Z remote: Counting objects:  97% (443/456)        
+2021-06-25T18:57:21.5433323Z remote: Counting objects:  98% (447/456)        
+2021-06-25T18:57:21.5433822Z remote: Counting objects:  99% (452/456)        
+2021-06-25T18:57:21.5434312Z remote: Counting objects: 100% (456/456)        
+2021-06-25T18:57:21.5434836Z remote: Counting objects: 100% (456/456), done.        
+2021-06-25T18:57:21.5435557Z remote: Compressing objects:   0% (1/236)        
+2021-06-25T18:57:21.5436075Z remote: Compressing objects:   1% (3/236)        
+2021-06-25T18:57:21.5436606Z remote: Compressing objects:   2% (5/236)        
+2021-06-25T18:57:21.5437130Z remote: Compressing objects:   3% (8/236)        
+2021-06-25T18:57:21.5437654Z remote: Compressing objects:   4% (10/236)        
+2021-06-25T18:57:21.5438182Z remote: Compressing objects:   5% (12/236)        
+2021-06-25T18:57:21.5438716Z remote: Compressing objects:   6% (15/236)        
+2021-06-25T18:57:21.5439238Z remote: Compressing objects:   7% (17/236)        
+2021-06-25T18:57:21.5439773Z remote: Compressing objects:   8% (19/236)        
+2021-06-25T18:57:21.5440391Z remote: Compressing objects:   9% (22/236)        
+2021-06-25T18:57:21.5440944Z remote: Compressing objects:  10% (24/236)        
+2021-06-25T18:57:21.5441471Z remote: Compressing objects:  11% (26/236)        
+2021-06-25T18:57:21.5441992Z remote: Compressing objects:  12% (29/236)        
+2021-06-25T18:57:21.5442526Z remote: Compressing objects:  13% (31/236)        
+2021-06-25T18:57:21.5443047Z remote: Compressing objects:  14% (34/236)        
+2021-06-25T18:57:21.5443575Z remote: Compressing objects:  15% (36/236)        
+2021-06-25T18:57:21.5444092Z remote: Compressing objects:  16% (38/236)        
+2021-06-25T18:57:21.5444625Z remote: Compressing objects:  17% (41/236)        
+2021-06-25T18:57:21.5445149Z remote: Compressing objects:  18% (43/236)        
+2021-06-25T18:57:21.5445668Z remote: Compressing objects:  19% (45/236)        
+2021-06-25T18:57:21.5446272Z remote: Compressing objects:  20% (48/236)        
+2021-06-25T18:57:21.5446811Z remote: Compressing objects:  21% (50/236)        
+2021-06-25T18:57:21.5447359Z remote: Compressing objects:  22% (52/236)        
+2021-06-25T18:57:21.5447886Z remote: Compressing objects:  23% (55/236)        
+2021-06-25T18:57:21.5448409Z remote: Compressing objects:  24% (57/236)        
+2021-06-25T18:57:21.5448929Z remote: Compressing objects:  25% (59/236)        
+2021-06-25T18:57:21.5449469Z remote: Compressing objects:  26% (62/236)        
+2021-06-25T18:57:21.5449997Z remote: Compressing objects:  27% (64/236)        
+2021-06-25T18:57:21.5450518Z remote: Compressing objects:  28% (67/236)        
+2021-06-25T18:57:21.5451044Z remote: Compressing objects:  29% (69/236)        
+2021-06-25T18:57:21.5453602Z remote: Compressing objects:  30% (71/236)        
+2021-06-25T18:57:21.5454317Z remote: Compressing objects:  31% (74/236)        
+2021-06-25T18:57:21.5454929Z remote: Compressing objects:  32% (76/236)        
+2021-06-25T18:57:21.5455551Z remote: Compressing objects:  33% (78/236)        
+2021-06-25T18:57:21.5456356Z remote: Compressing objects:  34% (81/236)        
+2021-06-25T18:57:21.5456903Z remote: Compressing objects:  35% (83/236)        
+2021-06-25T18:57:21.5457436Z remote: Compressing objects:  36% (85/236)        
+2021-06-25T18:57:21.5457948Z remote: Compressing objects:  37% (88/236)        
+2021-06-25T18:57:21.5458654Z remote: Compressing objects:  38% (90/236)        
+2021-06-25T18:57:21.5459166Z remote: Compressing objects:  39% (93/236)        
+2021-06-25T18:57:21.5459691Z remote: Compressing objects:  40% (95/236)        
+2021-06-25T18:57:21.5460201Z remote: Compressing objects:  41% (97/236)        
+2021-06-25T18:57:21.5460732Z remote: Compressing objects:  42% (100/236)        
+2021-06-25T18:57:21.5461251Z remote: Compressing objects:  43% (102/236)        
+2021-06-25T18:57:21.5461783Z remote: Compressing objects:  44% (104/236)        
+2021-06-25T18:57:21.5462316Z remote: Compressing objects:  45% (107/236)        
+2021-06-25T18:57:21.5462831Z remote: Compressing objects:  46% (109/236)        
+2021-06-25T18:57:21.5463365Z remote: Compressing objects:  47% (111/236)        
+2021-06-25T18:57:21.5463881Z remote: Compressing objects:  48% (114/236)        
+2021-06-25T18:57:21.5464407Z remote: Compressing objects:  49% (116/236)        
+2021-06-25T18:57:21.5464913Z remote: Compressing objects:  50% (118/236)        
+2021-06-25T18:57:21.5465442Z remote: Compressing objects:  51% (121/236)        
+2021-06-25T18:57:21.5465947Z remote: Compressing objects:  52% (123/236)        
+2021-06-25T18:57:21.5466457Z remote: Compressing objects:  53% (126/236)        
+2021-06-25T18:57:21.5466965Z remote: Compressing objects:  54% (128/236)        
+2021-06-25T18:57:21.5467469Z remote: Compressing objects:  55% (130/236)        
+2021-06-25T18:57:21.5467977Z remote: Compressing objects:  56% (133/236)        
+2021-06-25T18:57:21.5468480Z remote: Compressing objects:  57% (135/236)        
+2021-06-25T18:57:21.5468983Z remote: Compressing objects:  58% (137/236)        
+2021-06-25T18:57:21.5469489Z remote: Compressing objects:  59% (140/236)        
+2021-06-25T18:57:21.5470089Z remote: Compressing objects:  60% (142/236)        
+2021-06-25T18:57:21.5470613Z remote: Compressing objects:  61% (144/236)        
+2021-06-25T18:57:21.5471119Z remote: Compressing objects:  62% (147/236)        
+2021-06-25T18:57:21.5471631Z remote: Compressing objects:  63% (149/236)        
+2021-06-25T18:57:21.5472144Z remote: Compressing objects:  64% (152/236)        
+2021-06-25T18:57:21.5472657Z remote: Compressing objects:  65% (154/236)        
+2021-06-25T18:57:21.5473163Z remote: Compressing objects:  66% (156/236)        
+2021-06-25T18:57:21.5473673Z remote: Compressing objects:  67% (159/236)        
+2021-06-25T18:57:21.5474174Z remote: Compressing objects:  68% (161/236)        
+2021-06-25T18:57:21.5474689Z remote: Compressing objects:  69% (163/236)        
+2021-06-25T18:57:21.5475200Z remote: Compressing objects:  70% (166/236)        
+2021-06-25T18:57:21.5475708Z remote: Compressing objects:  71% (168/236)        
+2021-06-25T18:57:21.5476220Z remote: Compressing objects:  72% (170/236)        
+2021-06-25T18:57:21.5476727Z remote: Compressing objects:  73% (173/236)        
+2021-06-25T18:57:21.5477241Z remote: Compressing objects:  74% (175/236)        
+2021-06-25T18:57:21.5477753Z remote: Compressing objects:  75% (177/236)        
+2021-06-25T18:57:21.5478287Z remote: Compressing objects:  76% (180/236)        
+2021-06-25T18:57:21.5478799Z remote: Compressing objects:  77% (182/236)        
+2021-06-25T18:57:21.5479322Z remote: Compressing objects:  78% (185/236)        
+2021-06-25T18:57:21.5480002Z remote: Compressing objects:  79% (187/236)        
+2021-06-25T18:57:21.5480516Z remote: Compressing objects:  80% (189/236)        
+2021-06-25T18:57:21.5481026Z remote: Compressing objects:  81% (192/236)        
+2021-06-25T18:57:21.5481520Z remote: Compressing objects:  82% (194/236)        
+2021-06-25T18:57:21.5482011Z remote: Compressing objects:  83% (196/236)        
+2021-06-25T18:57:21.5482502Z remote: Compressing objects:  84% (199/236)        
+2021-06-25T18:57:21.5483013Z remote: Compressing objects:  85% (201/236)        
+2021-06-25T18:57:21.5483499Z remote: Compressing objects:  86% (203/236)        
+2021-06-25T18:57:21.5483989Z remote: Compressing objects:  87% (206/236)        
+2021-06-25T18:57:21.5484984Z remote: Compressing objects:  88% (208/236)        
+2021-06-25T18:57:21.5486011Z remote: Compressing objects:  89% (211/236)        
+2021-06-25T18:57:21.5486505Z remote: Compressing objects:  90% (213/236)        
+2021-06-25T18:57:21.5487002Z remote: Compressing objects:  91% (215/236)        
+2021-06-25T18:57:21.5487486Z remote: Compressing objects:  92% (218/236)        
+2021-06-25T18:57:21.5487979Z remote: Compressing objects:  93% (220/236)        
+2021-06-25T18:57:21.5488465Z remote: Compressing objects:  94% (222/236)        
+2021-06-25T18:57:21.5489721Z remote: Compressing objects:  95% (225/236)        
+2021-06-25T18:57:21.5490243Z remote: Compressing objects:  96% (227/236)        
+2021-06-25T18:57:21.5490735Z remote: Compressing objects:  97% (229/236)        
+2021-06-25T18:57:21.5491244Z remote: Compressing objects:  98% (232/236)        
+2021-06-25T18:57:21.5491881Z remote: Compressing objects:  99% (234/236)        
+2021-06-25T18:57:21.5492385Z remote: Compressing objects: 100% (236/236)        
+2021-06-25T18:57:21.5492909Z remote: Compressing objects: 100% (236/236), done.        
+2021-06-25T18:57:21.5493390Z Receiving objects:   0% (1/802)
+2021-06-25T18:57:21.5493803Z Receiving objects:   1% (9/802)
+2021-06-25T18:57:21.5494212Z Receiving objects:   2% (17/802)
+2021-06-25T18:57:21.5494641Z Receiving objects:   3% (25/802)
+2021-06-25T18:57:21.5495048Z Receiving objects:   4% (33/802)
+2021-06-25T18:57:21.5495659Z Receiving objects:   5% (41/802)
+2021-06-25T18:57:21.5496081Z Receiving objects:   6% (49/802)
+2021-06-25T18:57:21.5496513Z Receiving objects:   7% (57/802)
+2021-06-25T18:57:21.5497080Z Receiving objects:   8% (65/802)
+2021-06-25T18:57:21.5497836Z Receiving objects:   9% (73/802)
+2021-06-25T18:57:21.5498260Z Receiving objects:  10% (81/802)
+2021-06-25T18:57:21.5498952Z Receiving objects:  11% (89/802)
+2021-06-25T18:57:21.5499768Z Receiving objects:  12% (97/802)
+2021-06-25T18:57:21.5500383Z Receiving objects:  13% (105/802)
+2021-06-25T18:57:21.5500842Z Receiving objects:  14% (113/802)
+2021-06-25T18:57:21.5501426Z Receiving objects:  15% (121/802)
+2021-06-25T18:57:21.5502236Z Receiving objects:  16% (129/802)
+2021-06-25T18:57:21.5502838Z Receiving objects:  17% (137/802)
+2021-06-25T18:57:21.5503641Z Receiving objects:  18% (145/802)
+2021-06-25T18:57:21.5504438Z Receiving objects:  19% (153/802)
+2021-06-25T18:57:21.5504923Z Receiving objects:  20% (161/802)
+2021-06-25T18:57:21.5505390Z Receiving objects:  21% (169/802)
+2021-06-25T18:57:21.5506178Z Receiving objects:  22% (177/802)
+2021-06-25T18:57:21.5506628Z Receiving objects:  23% (185/802)
+2021-06-25T18:57:21.5507072Z Receiving objects:  24% (193/802)
+2021-06-25T18:57:21.5507845Z Receiving objects:  25% (201/802)
+2021-06-25T18:57:21.5508257Z Receiving objects:  26% (209/802)
+2021-06-25T18:57:21.5508681Z Receiving objects:  27% (217/802)
+2021-06-25T18:57:21.5509095Z Receiving objects:  28% (225/802)
+2021-06-25T18:57:21.5509522Z Receiving objects:  29% (233/802)
+2021-06-25T18:57:21.5509929Z Receiving objects:  30% (241/802)
+2021-06-25T18:57:21.5510594Z Receiving objects:  31% (249/802)
+2021-06-25T18:57:21.5511211Z Receiving objects:  32% (257/802)
+2021-06-25T18:57:21.5511665Z Receiving objects:  33% (265/802)
+2021-06-25T18:57:21.5512306Z Receiving objects:  34% (273/802)
+2021-06-25T18:57:21.5513072Z Receiving objects:  35% (281/802)
+2021-06-25T18:57:21.5513699Z Receiving objects:  36% (289/802)
+2021-06-25T18:57:21.5514348Z Receiving objects:  37% (297/802)
+2021-06-25T18:57:21.5515111Z Receiving objects:  38% (305/802)
+2021-06-25T18:57:21.5515542Z Receiving objects:  39% (313/802)
+2021-06-25T18:57:21.5516018Z Receiving objects:  40% (321/802)
+2021-06-25T18:57:21.5516441Z Receiving objects:  41% (329/802)
+2021-06-25T18:57:21.5516883Z Receiving objects:  42% (337/802)
+2021-06-25T18:57:21.5517961Z Receiving objects:  43% (345/802)
+2021-06-25T18:57:21.5518406Z Receiving objects:  44% (353/802)
+2021-06-25T18:57:21.5518847Z Receiving objects:  45% (361/802)
+2021-06-25T18:57:21.5519267Z Receiving objects:  46% (369/802)
+2021-06-25T18:57:21.5519708Z Receiving objects:  47% (377/802)
+2021-06-25T18:57:21.5520278Z Receiving objects:  48% (385/802)
+2021-06-25T18:57:21.5520718Z Receiving objects:  49% (393/802)
+2021-06-25T18:57:21.5521149Z Receiving objects:  50% (401/802)
+2021-06-25T18:57:21.5522418Z Receiving objects:  51% (410/802)
+2021-06-25T18:57:21.5522936Z Receiving objects:  52% (418/802)
+2021-06-25T18:57:21.5523459Z Receiving objects:  53% (426/802)
+2021-06-25T18:57:21.5523977Z Receiving objects:  54% (434/802)
+2021-06-25T18:57:21.5524477Z Receiving objects:  55% (442/802)
+2021-06-25T18:57:21.5525131Z Receiving objects:  56% (450/802)
+2021-06-25T18:57:21.5525552Z Receiving objects:  57% (458/802)
+2021-06-25T18:57:21.5525991Z Receiving objects:  58% (466/802)
+2021-06-25T18:57:21.5526412Z Receiving objects:  59% (474/802)
+2021-06-25T18:57:21.5526864Z Receiving objects:  60% (482/802)
+2021-06-25T18:57:21.5527290Z Receiving objects:  61% (490/802)
+2021-06-25T18:57:21.5527732Z Receiving objects:  62% (498/802)
+2021-06-25T18:57:21.5528307Z Receiving objects:  63% (506/802)
+2021-06-25T18:57:21.5528746Z Receiving objects:  64% (514/802)
+2021-06-25T18:57:21.5529174Z Receiving objects:  65% (522/802)
+2021-06-25T18:57:21.5529585Z Receiving objects:  66% (530/802)
+2021-06-25T18:57:21.5530009Z Receiving objects:  67% (538/802)
+2021-06-25T18:57:21.5530417Z Receiving objects:  68% (546/802)
+2021-06-25T18:57:21.5530845Z Receiving objects:  69% (554/802)
+2021-06-25T18:57:21.5531254Z Receiving objects:  70% (562/802)
+2021-06-25T18:57:21.5531857Z Receiving objects:  71% (570/802)
+2021-06-25T18:57:21.5532273Z Receiving objects:  72% (578/802)
+2021-06-25T18:57:21.5532701Z Receiving objects:  73% (586/802)
+2021-06-25T18:57:21.5533290Z Receiving objects:  74% (594/802)
+2021-06-25T18:57:21.5533730Z Receiving objects:  75% (602/802)
+2021-06-25T18:57:21.5534940Z Receiving objects:  76% (610/802)
+2021-06-25T18:57:21.5535600Z Receiving objects:  77% (618/802)
+2021-06-25T18:57:21.5536455Z Receiving objects:  78% (626/802)
+2021-06-25T18:57:21.5536938Z Receiving objects:  79% (634/802)
+2021-06-25T18:57:21.5537999Z Receiving objects:  80% (642/802)
+2021-06-25T18:57:21.5538474Z Receiving objects:  81% (650/802)
+2021-06-25T18:57:21.5539144Z Receiving objects:  82% (658/802)
+2021-06-25T18:57:21.5539990Z Receiving objects:  83% (666/802)
+2021-06-25T18:57:21.5541045Z Receiving objects:  84% (674/802)
+2021-06-25T18:57:21.5541743Z Receiving objects:  85% (682/802)
+2021-06-25T18:57:21.5542372Z Receiving objects:  86% (690/802)
+2021-06-25T18:57:21.5543012Z Receiving objects:  87% (698/802)
+2021-06-25T18:57:21.5543530Z Receiving objects:  88% (706/802)
+2021-06-25T18:57:21.5544674Z Receiving objects:  89% (714/802)
+2021-06-25T18:57:21.5545557Z Receiving objects:  90% (722/802)
+2021-06-25T18:57:21.5546777Z remote: Total 802 (delta 251), reused 280 (delta 185), pack-reused 346        
+2021-06-25T18:57:21.5547791Z Receiving objects:  91% (730/802)
+2021-06-25T18:57:21.5548479Z Receiving objects:  92% (738/802)
+2021-06-25T18:57:21.5549066Z Receiving objects:  93% (746/802)
+2021-06-25T18:57:21.5549565Z Receiving objects:  94% (754/802)
+2021-06-25T18:57:21.5550059Z Receiving objects:  95% (762/802)
+2021-06-25T18:57:21.5550559Z Receiving objects:  96% (770/802)
+2021-06-25T18:57:21.5551197Z Receiving objects:  97% (778/802)
+2021-06-25T18:57:21.5551685Z Receiving objects:  98% (786/802)
+2021-06-25T18:57:21.5552166Z Receiving objects:  99% (794/802)
+2021-06-25T18:57:21.5553742Z Receiving objects: 100% (802/802)
+2021-06-25T18:57:21.5554434Z Receiving objects: 100% (802/802), 218.52 KiB | 2.21 MiB/s, done.
+2021-06-25T18:57:21.5555001Z Resolving deltas:   0% (0/431)
+2021-06-25T18:57:21.5555506Z Resolving deltas:   1% (5/431)
+2021-06-25T18:57:21.5555991Z Resolving deltas:   2% (9/431)
+2021-06-25T18:57:21.5556492Z Resolving deltas:   3% (13/431)
+2021-06-25T18:57:21.5557261Z Resolving deltas:   4% (18/431)
+2021-06-25T18:57:21.5557731Z Resolving deltas:   5% (22/431)
+2021-06-25T18:57:21.5558170Z Resolving deltas:   6% (26/431)
+2021-06-25T18:57:21.5558832Z Resolving deltas:   7% (31/431)
+2021-06-25T18:57:21.5559724Z Resolving deltas:   8% (35/431)
+2021-06-25T18:57:21.5560337Z Resolving deltas:   9% (39/431)
+2021-06-25T18:57:21.5560777Z Resolving deltas:  10% (44/431)
+2021-06-25T18:57:21.5561201Z Resolving deltas:  11% (48/431)
+2021-06-25T18:57:21.5561640Z Resolving deltas:  12% (52/431)
+2021-06-25T18:57:21.5562313Z Resolving deltas:  13% (57/431)
+2021-06-25T18:57:21.5563502Z Resolving deltas:  14% (61/431)
+2021-06-25T18:57:21.5564074Z Resolving deltas:  15% (65/431)
+2021-06-25T18:57:21.5564679Z Resolving deltas:  16% (69/431)
+2021-06-25T18:57:21.5565144Z Resolving deltas:  17% (74/431)
+2021-06-25T18:57:21.5565628Z Resolving deltas:  18% (78/431)
+2021-06-25T18:57:21.5566092Z Resolving deltas:  19% (82/431)
+2021-06-25T18:57:21.5566733Z Resolving deltas:  20% (87/431)
+2021-06-25T18:57:21.5567201Z Resolving deltas:  21% (91/431)
+2021-06-25T18:57:21.5567657Z Resolving deltas:  22% (95/431)
+2021-06-25T18:57:21.5568446Z Resolving deltas:  23% (100/431)
+2021-06-25T18:57:21.5568871Z Resolving deltas:  24% (104/431)
+2021-06-25T18:57:21.5569312Z Resolving deltas:  25% (108/431)
+2021-06-25T18:57:21.5569751Z Resolving deltas:  26% (113/431)
+2021-06-25T18:57:21.5570196Z Resolving deltas:  27% (117/431)
+2021-06-25T18:57:21.5570617Z Resolving deltas:  28% (121/431)
+2021-06-25T18:57:21.5571697Z Resolving deltas:  29% (125/431)
+2021-06-25T18:57:21.5572351Z Resolving deltas:  30% (130/431)
+2021-06-25T18:57:21.5573081Z Resolving deltas:  31% (134/431)
+2021-06-25T18:57:21.5573895Z Resolving deltas:  32% (138/431)
+2021-06-25T18:57:21.5574701Z Resolving deltas:  33% (143/431)
+2021-06-25T18:57:21.5575721Z Resolving deltas:  34% (147/431)
+2021-06-25T18:57:21.5576540Z Resolving deltas:  35% (151/431)
+2021-06-25T18:57:21.5577027Z Resolving deltas:  36% (156/431)
+2021-06-25T18:57:21.5577652Z Resolving deltas:  37% (160/431)
+2021-06-25T18:57:21.5578228Z Resolving deltas:  38% (164/431)
+2021-06-25T18:57:21.5578709Z Resolving deltas:  39% (169/431)
+2021-06-25T18:57:21.5579338Z Resolving deltas:  40% (173/431)
+2021-06-25T18:57:21.5579776Z Resolving deltas:  41% (177/431)
+2021-06-25T18:57:21.5580227Z Resolving deltas:  42% (182/431)
+2021-06-25T18:57:21.5580678Z Resolving deltas:  43% (186/431)
+2021-06-25T18:57:21.5581129Z Resolving deltas:  44% (190/431)
+2021-06-25T18:57:21.5582165Z Resolving deltas:  45% (194/431)
+2021-06-25T18:57:21.5583461Z Resolving deltas:  46% (199/431)
+2021-06-25T18:57:21.5584224Z Resolving deltas:  47% (203/431)
+2021-06-25T18:57:21.5584706Z Resolving deltas:  48% (207/431)
+2021-06-25T18:57:21.5585351Z Resolving deltas:  49% (212/431)
+2021-06-25T18:57:21.5586148Z Resolving deltas:  50% (216/431)
+2021-06-25T18:57:21.5586620Z Resolving deltas:  51% (220/431)
+2021-06-25T18:57:21.5587075Z Resolving deltas:  52% (225/431)
+2021-06-25T18:57:21.5587553Z Resolving deltas:  53% (229/431)
+2021-06-25T18:57:21.5588007Z Resolving deltas:  54% (233/431)
+2021-06-25T18:57:21.5588621Z Resolving deltas:  55% (238/431)
+2021-06-25T18:57:21.5589124Z Resolving deltas:  56% (242/431)
+2021-06-25T18:57:21.5589586Z Resolving deltas:  57% (246/431)
+2021-06-25T18:57:21.5590055Z Resolving deltas:  58% (250/431)
+2021-06-25T18:57:21.5590523Z Resolving deltas:  59% (255/431)
+2021-06-25T18:57:21.5591000Z Resolving deltas:  60% (259/431)
+2021-06-25T18:57:21.5591456Z Resolving deltas:  61% (263/431)
+2021-06-25T18:57:21.5591921Z Resolving deltas:  62% (268/431)
+2021-06-25T18:57:21.5592381Z Resolving deltas:  63% (272/431)
+2021-06-25T18:57:21.5592851Z Resolving deltas:  64% (276/431)
+2021-06-25T18:57:21.5593302Z Resolving deltas:  65% (281/431)
+2021-06-25T18:57:21.5593771Z Resolving deltas:  66% (285/431)
+2021-06-25T18:57:21.5594227Z Resolving deltas:  67% (289/431)
+2021-06-25T18:57:21.5594699Z Resolving deltas:  68% (294/431)
+2021-06-25T18:57:21.5595172Z Resolving deltas:  69% (298/431)
+2021-06-25T18:57:21.5595624Z Resolving deltas:  70% (302/431)
+2021-06-25T18:57:21.5596100Z Resolving deltas:  71% (307/431)
+2021-06-25T18:57:21.5596713Z Resolving deltas:  72% (311/431)
+2021-06-25T18:57:21.5597350Z Resolving deltas:  73% (315/431)
+2021-06-25T18:57:21.5597807Z Resolving deltas:  74% (319/431)
+2021-06-25T18:57:21.5598274Z Resolving deltas:  75% (324/431)
+2021-06-25T18:57:21.5598886Z Resolving deltas:  76% (328/431)
+2021-06-25T18:57:21.5599504Z Resolving deltas:  77% (332/431)
+2021-06-25T18:57:21.5599941Z Resolving deltas:  78% (337/431)
+2021-06-25T18:57:21.5600394Z Resolving deltas:  79% (341/431)
+2021-06-25T18:57:21.5600832Z Resolving deltas:  80% (345/431)
+2021-06-25T18:57:21.5601287Z Resolving deltas:  81% (350/431)
+2021-06-25T18:57:21.5601738Z Resolving deltas:  82% (354/431)
+2021-06-25T18:57:21.5602176Z Resolving deltas:  83% (358/431)
+2021-06-25T18:57:21.5602627Z Resolving deltas:  84% (363/431)
+2021-06-25T18:57:21.5603064Z Resolving deltas:  85% (367/431)
+2021-06-25T18:57:21.5603515Z Resolving deltas:  86% (371/431)
+2021-06-25T18:57:21.5603956Z Resolving deltas:  87% (375/431)
+2021-06-25T18:57:21.5604420Z Resolving deltas:  88% (380/431)
+2021-06-25T18:57:21.5604859Z Resolving deltas:  89% (384/431)
+2021-06-25T18:57:21.5605318Z Resolving deltas:  90% (388/431)
+2021-06-25T18:57:21.5605761Z Resolving deltas:  91% (393/431)
+2021-06-25T18:57:21.5606227Z Resolving deltas:  92% (397/431)
+2021-06-25T18:57:21.5606677Z Resolving deltas:  93% (401/431)
+2021-06-25T18:57:21.5607120Z Resolving deltas:  94% (406/431)
+2021-06-25T18:57:21.5607573Z Resolving deltas:  95% (410/431)
+2021-06-25T18:57:21.5608007Z Resolving deltas:  96% (414/431)
+2021-06-25T18:57:21.5608455Z Resolving deltas:  97% (419/431)
+2021-06-25T18:57:21.5608887Z Resolving deltas:  98% (423/431)
+2021-06-25T18:57:21.5609335Z Resolving deltas:  99% (427/431)
+2021-06-25T18:57:21.5609769Z Resolving deltas: 100% (431/431)
+2021-06-25T18:57:21.5610237Z Resolving deltas: 100% (431/431), done.
+2021-06-25T18:57:21.5610973Z From https://github.com/con/tinuous
+2021-06-25T18:57:21.5612392Z  * [new branch]      gh-55           -> origin/gh-55
+2021-06-25T18:57:21.5613415Z  * [new branch]      master          -> origin/master
+2021-06-25T18:57:21.5614337Z  * [new branch]      no-extra-search -> origin/no-extra-search
+2021-06-25T18:57:21.5615265Z  * [new branch]      readme-tweaks   -> origin/readme-tweaks
+2021-06-25T18:57:21.5616178Z  * [new branch]      test-appveyor   -> origin/test-appveyor
+2021-06-25T18:57:21.5616923Z  * [new tag]         0.1.0           -> 0.1.0
+2021-06-25T18:57:21.5617629Z  * [new tag]         0.2.0           -> 0.2.0
+2021-06-25T18:57:21.5618183Z  * [new tag]         0.3.0           -> 0.3.0
+2021-06-25T18:57:21.5618717Z  * [new tag]         0.4.0           -> 0.4.0
+2021-06-25T18:57:21.5619454Z [command]/usr/bin/git branch --list --remote origin/readme-tweaks
+2021-06-25T18:57:21.5620198Z   origin/readme-tweaks
+2021-06-25T18:57:21.5620979Z [command]/usr/bin/git rev-parse refs/remotes/origin/readme-tweaks
+2021-06-25T18:57:21.5621807Z 5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb
+2021-06-25T18:57:21.5622632Z ##[endgroup]
+2021-06-25T18:57:21.5623295Z ##[group]Determining the checkout info
+2021-06-25T18:57:21.5623752Z ##[endgroup]
+2021-06-25T18:57:21.5624167Z ##[group]Checking out the ref
+2021-06-25T18:57:21.5625170Z [command]/usr/bin/git checkout --progress --force -B readme-tweaks refs/remotes/origin/readme-tweaks
+2021-06-25T18:57:21.5626152Z Switched to a new branch 'readme-tweaks'
+2021-06-25T18:57:21.5627085Z Branch 'readme-tweaks' set up to track remote branch 'readme-tweaks' from 'origin'.
+2021-06-25T18:57:21.5627727Z ##[endgroup]
+2021-06-25T18:57:21.5628334Z [command]/usr/bin/git log -1 --format='%H'
+2021-06-25T18:57:21.5629115Z '5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb'
+2021-06-25T18:57:21.5712609Z ##[group]Run actions/setup-python@v2
+2021-06-25T18:57:21.5713111Z with:
+2021-06-25T18:57:21.5713488Z   python-version: 3.8
+2021-06-25T18:57:21.5714360Z   token: ***
+2021-06-25T18:57:21.5714715Z ##[endgroup]
+2021-06-25T18:57:21.6446592Z Successfully setup CPython (3.8.10)
+2021-06-25T18:57:21.6599164Z ##[group]Run python -m pip install --upgrade pip wheel
+2021-06-25T18:57:21.6599859Z [36;1mpython -m pip install --upgrade pip wheel[0m
+2021-06-25T18:57:21.6601093Z [36;1mpython -m pip install --upgrade --upgrade-strategy=eager tox[0m
+2021-06-25T18:57:21.6644117Z shell: /usr/bin/bash -e {0}
+2021-06-25T18:57:21.6644605Z env:
+2021-06-25T18:57:21.6645074Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.10/x64
+2021-06-25T18:57:21.6645686Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.10/x64/lib
+2021-06-25T18:57:21.6646193Z ##[endgroup]
+2021-06-25T18:57:23.8309226Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages (21.1.2)
+2021-06-25T18:57:24.0510923Z Collecting wheel
+2021-06-25T18:57:24.1085451Z   Downloading wheel-0.36.2-py2.py3-none-any.whl (35 kB)
+2021-06-25T18:57:24.1750635Z Installing collected packages: wheel
+2021-06-25T18:57:24.2147075Z Successfully installed wheel-0.36.2
+2021-06-25T18:57:24.9445152Z Collecting tox
+2021-06-25T18:57:24.9942990Z   Downloading tox-3.23.1-py2.py3-none-any.whl (85 kB)
+2021-06-25T18:57:25.0662107Z Collecting filelock>=3.0.0
+2021-06-25T18:57:25.0785409Z   Downloading filelock-3.0.12-py3-none-any.whl (7.6 kB)
+2021-06-25T18:57:25.1160410Z Collecting toml>=0.9.4
+2021-06-25T18:57:25.1278585Z   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+2021-06-25T18:57:25.1652885Z Collecting six>=1.14.0
+2021-06-25T18:57:25.1769069Z   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+2021-06-25T18:57:25.2318171Z Collecting packaging>=14
+2021-06-25T18:57:25.2443387Z   Downloading packaging-20.9-py2.py3-none-any.whl (40 kB)
+2021-06-25T18:57:25.4537868Z Collecting virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0
+2021-06-25T18:57:25.4681285Z   Downloading virtualenv-20.4.7-py2.py3-none-any.whl (7.2 MB)
+2021-06-25T18:57:25.8918168Z Collecting py>=1.4.17
+2021-06-25T18:57:25.9038934Z   Downloading py-1.10.0-py2.py3-none-any.whl (97 kB)
+2021-06-25T18:57:25.9525856Z Collecting pluggy>=0.12.0
+2021-06-25T18:57:25.9644670Z   Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)
+2021-06-25T18:57:26.0462713Z Collecting pyparsing>=2.0.2
+2021-06-25T18:57:26.0615619Z   Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+2021-06-25T18:57:26.9378244Z Collecting distlib<1,>=0.3.1
+2021-06-25T18:57:26.9395778Z   Downloading distlib-0.3.2-py2.py3-none-any.whl (338 kB)
+2021-06-25T18:57:26.9397848Z Collecting appdirs<2,>=1.4.3
+2021-06-25T18:57:26.9399468Z   Downloading appdirs-1.4.4-py2.py3-none-any.whl (9.6 kB)
+2021-06-25T18:57:26.9400909Z Installing collected packages: six, pyparsing, filelock, distlib, appdirs, virtualenv, toml, py, pluggy, packaging, tox
+2021-06-25T18:57:26.9403150Z Successfully installed appdirs-1.4.4 distlib-0.3.2 filelock-3.0.12 packaging-20.9 pluggy-0.13.1 py-1.10.0 pyparsing-2.4.7 six-1.16.0 toml-0.10.2 tox-3.23.1 virtualenv-20.4.7
+2021-06-25T18:57:26.9491886Z ##[group]Run tox -e py -- --cov-report=xml
+2021-06-25T18:57:26.9492497Z [36;1mtox -e py -- --cov-report=xml[0m
+2021-06-25T18:57:26.9526471Z shell: /usr/bin/bash -e {0}
+2021-06-25T18:57:26.9526964Z env:
+2021-06-25T18:57:26.9527437Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.10/x64
+2021-06-25T18:57:26.9528048Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.10/x64/lib
+2021-06-25T18:57:26.9528519Z ##[endgroup]
+2021-06-25T18:57:27.4858972Z .package create: /home/runner/work/tinuous/tinuous/.tox/.package
+2021-06-25T18:57:27.9293581Z .package installdeps: setuptools >= 46.4.0, wheel ~= 0.32
+2021-06-25T18:57:31.6185211Z py create: /home/runner/work/tinuous/tinuous/.tox/py
+2021-06-25T18:57:31.9371478Z py installdeps: pytest~=6.0, pytest-cov~=2.0, pytest-mock~=3.0
+2021-06-25T18:57:35.1343545Z py inst: /home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.4.0+1.g5c9a198.tar.gz
+2021-06-25T18:57:45.4192631Z py installed: attrs==21.2.0,certifi==2021.5.30,cffi==1.14.5,chardet==4.0.0,click==8.0.1,click-loglevel==0.4.0.post1,coverage==5.5,Deprecated==1.2.12,idna==2.10,in-place==0.5.0,iniconfig==1.1.1,packaging==20.9,pluggy==0.13.1,py==1.10.0,pycparser==2.20,pydantic==1.8.2,PyGithub==1.55,PyJWT==2.1.0,PyNaCl==1.4.0,pyparsing==2.4.7,pytest==6.2.4,pytest-cov==2.12.1,pytest-mock==3.6.1,python-dateutil==2.8.1,python-dotenv==0.18.0,PyYAML==5.4.1,requests==2.25.1,six==1.16.0,tinuous @ file:///home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.4.0%2B1.g5c9a198.tar.gz,toml==0.10.2,typing-extensions==3.10.0.0,urllib3==1.26.6,wrapt==1.12.1
+2021-06-25T18:57:45.4197150Z py run-test-pre: PYTHONHASHSEED='793057205'
+2021-06-25T18:57:45.4205654Z py run-test: commands[0] | tinuous --help
+2021-06-25T18:57:45.7645422Z Usage: tinuous [OPTIONS] COMMAND [ARGS]...
+2021-06-25T18:57:45.7646476Z 
+2021-06-25T18:57:45.7647445Z   Download build logs from GitHub Actions, Travis, and Appveyor
+2021-06-25T18:57:45.7648128Z 
+2021-06-25T18:57:45.7653360Z Options:
+2021-06-25T18:57:45.7654773Z   -V, --version                   Show the version and exit.
+2021-06-25T18:57:45.7656275Z   -c, --config FILE               Read configuration from the given file
+2021-06-25T18:57:45.7657093Z                                   [default: tinuous.yaml]
+2021-06-25T18:57:45.7658321Z   -E, --env FILE                  Load environment variables from given .env
+2021-06-25T18:57:45.7659094Z                                   file
+2021-06-25T18:57:45.7659986Z   -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+2021-06-25T18:57:45.7660886Z                                   Set logging level  [default: 20]
+2021-06-25T18:57:45.7661953Z   --help                          Show this message and exit.
+2021-06-25T18:57:45.7662522Z 
+2021-06-25T18:57:45.7663454Z Commands:
+2021-06-25T18:57:45.7664225Z   fetch     Download logs
+2021-06-25T18:57:45.7665554Z   sanitize  Sanitize secrets in logs
+2021-06-25T18:57:45.7925763Z py run-test: commands[1] | pytest --cov-report=xml test
+2021-06-25T18:57:47.1389382Z ============================= test session starts ==============================
+2021-06-25T18:57:47.1390542Z platform linux -- Python 3.8.10, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+2021-06-25T18:57:47.1391055Z cachedir: .tox/py/.pytest_cache
+2021-06-25T18:57:47.1391565Z rootdir: /home/runner/work/tinuous/tinuous, configfile: tox.ini
+2021-06-25T18:57:47.1392190Z plugins: mock-3.6.1, cov-2.12.1
+2021-06-25T18:57:47.1392565Z collected 54 items
+2021-06-25T18:57:47.1392792Z 
+2021-06-25T18:57:47.2045552Z test/test_base.py .........                                              [ 16%]
+2021-06-25T18:57:47.2219333Z test/test_config.py ........                                             [ 31%]
+2021-06-25T18:57:47.2495440Z test/test_state.py ........                                              [ 46%]
+2021-06-25T18:57:47.4864323Z test/test_util.py .............................                          [100%]
+2021-06-25T18:57:47.4864680Z 
+2021-06-25T18:57:47.4865700Z ---------- coverage: platform linux, python 3.8.10-final-0 -----------
+2021-06-25T18:57:47.4866512Z Coverage XML written to file coverage.xml
+2021-06-25T18:57:47.4866876Z 
+2021-06-25T18:57:47.4867058Z 
+2021-06-25T18:57:47.4867399Z ============================== 54 passed in 0.86s ==============================
+2021-06-25T18:57:47.5338494Z ___________________________________ summary ____________________________________
+2021-06-25T18:57:47.5338980Z   py: commands succeeded
+2021-06-25T18:57:47.5339398Z   congratulations :)
+2021-06-25T18:57:47.5656568Z ##[group]Run codecov/codecov-action@v1
+2021-06-25T18:57:47.5656979Z with:
+2021-06-25T18:57:47.5657331Z   fail_ci_if_error: false
+2021-06-25T18:57:47.5657630Z env:
+2021-06-25T18:57:47.5658064Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.10/x64
+2021-06-25T18:57:47.5658654Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.10/x64/lib
+2021-06-25T18:57:47.5659080Z ##[endgroup]
+2021-06-25T18:57:47.6232838Z [command]/usr/bin/bash codecov.sh -n  -F  -Q github-action-v1.5.2
+2021-06-25T18:57:47.6299036Z 
+2021-06-25T18:57:47.6299571Z   _____          _
+2021-06-25T18:57:47.6299962Z  / ____|        | |
+2021-06-25T18:57:47.6300455Z | |     ___   __| | ___  ___ _____   __
+2021-06-25T18:57:47.6300855Z | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2021-06-25T18:57:47.6302264Z | |___| (_) | (_| |  __/ (_| (_) \ V /
+2021-06-25T18:57:47.6303024Z  \_____\___/ \__,_|\___|\___\___/ \_/
+2021-06-25T18:57:47.6303977Z                               Bash-1.0.3
+2021-06-25T18:57:47.6304475Z 
+2021-06-25T18:57:47.6304944Z 
+2021-06-25T18:57:47.6321548Z [0;36m==>[0m git version 2.32.0 found
+2021-06-25T18:57:47.6465144Z [0;36m==>[0m curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+2021-06-25T18:57:47.6467656Z Release-Date: 2020-01-08
+2021-06-25T18:57:47.6468750Z Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+2021-06-25T18:57:47.6470779Z Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+2021-06-25T18:57:47.6472811Z [0;90m==>[0m GitHub Actions detected.
+2021-06-25T18:57:47.6473529Z     Env vars used:
+2021-06-25T18:57:47.6474397Z       -> GITHUB_ACTIONS:    true
+2021-06-25T18:57:47.6475272Z       -> GITHUB_HEAD_REF:   
+2021-06-25T18:57:47.6476254Z       -> GITHUB_REF:        refs/heads/readme-tweaks
+2021-06-25T18:57:47.6477806Z       -> GITHUB_REPOSITORY: con/tinuous
+2021-06-25T18:57:47.6478758Z       -> GITHUB_RUN_ID:     972407133
+2021-06-25T18:57:47.6480022Z       -> GITHUB_SHA:        5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb
+2021-06-25T18:57:47.6481643Z       -> GITHUB_WORKFLOW:   Test
+2021-06-25T18:57:47.6689377Z     [0;90mproject root:[0m .
+2021-06-25T18:57:47.6768770Z     [0;90mYaml found at:[0m codecov.yml
+2021-06-25T18:57:47.7191249Z [0;90m==>[0m Running gcov in . [0;90m(disable via -X gcov)[0m
+2021-06-25T18:57:47.7323281Z [0;90m==>[0m Searching for coverage reports in:
+2021-06-25T18:57:47.7324316Z     [0;32m+[0m .
+2021-06-25T18:57:47.7401460Z     [0;90m->[0m Found 1 reports
+2021-06-25T18:57:47.7404346Z [0;90m==>[0m Detecting git/mercurial file structure
+2021-06-25T18:57:47.7486812Z [0;90m==>[0m Reading reports
+2021-06-25T18:57:47.7546111Z     [0;32m+[0m ./coverage.xml [0;90mbytes=43999[0m
+2021-06-25T18:57:47.7572601Z [0;90m==>[0m Appending adjustments
+2021-06-25T18:57:47.7574005Z     [0;36mhttps://docs.codecov.io/docs/fixing-reports[0m
+2021-06-25T18:57:47.7667007Z     [0;90m->[0m No adjustments found
+2021-06-25T18:57:47.7669675Z [0;90m==>[0m Gzipping contents
+2021-06-25T18:57:47.7945868Z         4.0K	/tmp/codecov.8wFzcD.gz
+2021-06-25T18:57:47.7964997Z [0;90m==>[0m Uploading reports
+2021-06-25T18:57:47.7966007Z     [0;90murl:[0m https://codecov.io
+2021-06-25T18:57:47.7968447Z     [0;90mquery:[0m branch=readme-tweaks&commit=5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb&build=972407133&build_url=http%3A%2F%2Fgithub.com%2Fcon%2Ftinuous%2Factions%2Fruns%2F972407133&name=&tag=&slug=con%2Ftinuous&service=github-actions&flags=&pr=&job=Test&cmd_args=n,F,Q
+2021-06-25T18:57:47.7998424Z [0;90m->[0m  Pinging Codecov
+2021-06-25T18:57:47.8000961Z https://codecov.io/upload/v4?package=github-action-v1.5.2-1.0.3&token=secret&branch=readme-tweaks&commit=5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb&build=972407133&build_url=http%3A%2F%2Fgithub.com%2Fcon%2Ftinuous%2Factions%2Fruns%2F972407133&name=&tag=&slug=con%2Ftinuous&service=github-actions&flags=&pr=&job=Test&cmd_args=n,F,Q
+2021-06-25T18:57:48.3615150Z [0;90m->[0m  Uploading to
+2021-06-25T18:57:48.3620268Z https://storage.googleapis.com/codecov/v4/raw/2021-06-25/0010CBA6D851417C00BB0BC3FC5895F9/5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb/dd60b1e0-ba98-4b28-9a02-23a7152bb418.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GOOG1EKKHVKCKHW7KBCGM7IHR55T63V2PAVJWLVFNITJHDU5G6R5IRN3LMWJA%2F20210625%2FUS%2Fs3%2Faws4_request&X-Amz-Date=20210625T185748Z&X-Amz-Expires=10&X-Amz-SignedHeaders=host&X-Amz-Signature=5271f4c3089e5fe77d9111d29df3a63ccc960f06c9ddbd1fe3c4268372642798
+2021-06-25T18:57:48.3694087Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2021-06-25T18:57:48.3695110Z                                  Dload  Upload   Total   Spent    Left  Speed
+2021-06-25T18:57:48.3695421Z 
+2021-06-25T18:57:48.5026855Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2021-06-25T18:57:48.5027497Z 100  3605    0     0  100  3605      0  27105 --:--:-- --:--:-- --:--:-- 27105
+2021-06-25T18:57:48.5079884Z     [0;32m->[0m Reports have been successfully queued for processing at [0;36mhttps://codecov.io/github/con/tinuous/commit/5c9a198c9fe2c3f3b18e4085d0a56dfa10c361bb[0m
+2021-06-25T18:57:48.5216651Z Post job cleanup.
+2021-06-25T18:57:48.6447060Z [command]/usr/bin/git version
+2021-06-25T18:57:48.6486300Z git version 2.32.0
+2021-06-25T18:57:48.6527544Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-06-25T18:57:48.6558588Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-06-25T18:57:48.6778289Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-06-25T18:57:48.6798301Z http.https://github.com/.extraheader
+2021-06-25T18:57:48.6805964Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2021-06-25T18:57:48.6837164Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-06-25T18:57:48.7080920Z Cleaning up orphan processes
