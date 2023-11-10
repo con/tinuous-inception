@@ -1,0 +1,44 @@
+2023-11-09T15:11:08.3170437Z ##[group]Run tox -e typing
+2023-11-09T15:11:08.3170894Z [36;1mtox -e typing[0m
+2023-11-09T15:11:08.3207739Z shell: /usr/bin/bash -e {0}
+2023-11-09T15:11:08.3208152Z env:
+2023-11-09T15:11:08.3208582Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
+2023-11-09T15:11:08.3209549Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/pkgconfig
+2023-11-09T15:11:08.3210333Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.8.18/x64
+2023-11-09T15:11:08.3211067Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.8.18/x64
+2023-11-09T15:11:08.3211773Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.8.18/x64
+2023-11-09T15:11:08.3212486Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
+2023-11-09T15:11:08.3213056Z ##[endgroup]
+2023-11-09T15:11:09.6131429Z typing: install_deps> python -I -m pip install mypy pytest pytest-cov pytest-mock types-python-dateutil types-PyYAML types-requests
+2023-11-09T15:11:14.8150433Z .pkg: install_requires> python -I -m pip install 'setuptools>=46.4.0' versioningit
+2023-11-09T15:11:16.7916378Z .pkg: _optional_hooks> python /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2023-11-09T15:11:17.1027347Z .pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2023-11-09T15:11:17.2339105Z .pkg: get_requires_for_build_wheel> python /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2023-11-09T15:11:17.3100823Z .pkg: install_requires_for_build_wheel> python -I -m pip install wheel
+2023-11-09T15:11:17.9865248Z .pkg: freeze> python -m pip freeze --all
+2023-11-09T15:11:18.3897278Z .pkg: importlib-metadata==6.8.0,packaging==23.2,pip==23.3.1,setuptools==68.2.2,tomli==2.0.1,versioningit==2.2.1,wheel==0.41.2,zipp==3.17.0
+2023-11-09T15:11:18.3904328Z .pkg: prepare_metadata_for_build_wheel> python /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2023-11-09T15:11:18.5964954Z .pkg: build_sdist> python /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2023-11-09T15:11:18.6924313Z typing: install_package_deps> python -I -m pip install 'PyYAML>=5.0' 'click-loglevel~=0.2' 'click>=7.0' 'in-place~=0.4' 'pydantic~=1.7' 'python-dateutil~=2.7' 'python-dotenv<2.0,>=0.11' 'requests~=2.20'
+2023-11-09T15:11:21.1648615Z typing: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.6.1.post43+g7839034.tar.gz
+2023-11-09T15:11:25.9236391Z typing: freeze> python -m pip freeze --all
+2023-11-09T15:11:26.3553893Z typing: certifi==2023.7.22,charset-normalizer==3.3.2,click==8.1.7,click-loglevel==0.5.0,coverage==7.3.2,exceptiongroup==1.1.3,idna==3.4,in-place==0.5.0,iniconfig==2.0.0,mypy==1.6.1,mypy-extensions==1.0.0,packaging==23.2,pip==23.3.1,pluggy==1.3.0,pydantic==1.10.13,pytest==7.4.3,pytest-cov==4.1.0,pytest-mock==3.12.0,python-dateutil==2.8.2,python-dotenv==1.0.0,PyYAML==6.0.1,requests==2.31.0,setuptools==68.2.2,six==1.16.0,tinuous @ file:///home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.6.1.post43%2Bg7839034.tar.gz#sha256=2ff92a52b61d095f0f27a4a482b4cf8c89da0e0684aa348ab43b02cd4e6e7475,tomli==2.0.1,types-python-dateutil==2.8.19.14,types-PyYAML==6.0.12.12,types-requests==2.31.0.10,typing_extensions==4.8.0,urllib3==2.0.7,wheel==0.41.2
+2023-11-09T15:11:26.3559695Z typing: commands[0]> mypy src test
+2023-11-09T15:11:32.4943822Z src/tinuous/travis.py:71: error: Item "None" of "Optional[Response]" has no
+2023-11-09T15:11:32.4945275Z attribute "status_code"  [union-attr]
+2023-11-09T15:11:32.4946021Z                 if e.response.status_code == 404:
+2023-11-09T15:11:32.4946807Z                    ^~~~~~~~~~~~~~~~~~~~~~
+2023-11-09T15:11:32.5349882Z src/tinuous/github.py:330: error: Item "None" of "Optional[Response]" has no
+2023-11-09T15:11:32.5352812Z attribute "status_code"  [union-attr]
+2023-11-09T15:11:32.5353754Z                 if e.response.status_code in (404, 410):
+2023-11-09T15:11:32.5354630Z                    ^~~~~~~~~~~~~~~~~~~~~~
+2023-11-09T15:11:32.5355719Z src/tinuous/github.py:334: error: Item "None" of "Optional[Response]" has no
+2023-11-09T15:11:32.5409273Z attribute "status_code"  [union-attr]
+2023-11-09T15:11:32.5410131Z     ...       "Request for logs returned %d; skipping", e.response.status_cod...
+2023-11-09T15:11:32.5411049Z                                                         ^~~~~~~~~~~~~~~~~~~~~~
+2023-11-09T15:11:33.2987666Z Found 3 errors in 2 files (checked 15 source files)
+2023-11-09T15:11:33.3109687Z typing: exit 1 (6.95 seconds) /home/runner/work/tinuous/tinuous> mypy src test pid=2025
+2023-11-09T15:11:33.3120357Z .pkg: _exit> python /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2023-11-09T15:11:33.3560574Z   typing: FAIL code 1 (24.05=setup[17.10]+cmd[6.95] seconds)
+2023-11-09T15:11:33.3561404Z   evaluation failed :( (24.43 seconds)
+2023-11-09T15:11:33.3935134Z ##[error]Process completed with exit code 1.

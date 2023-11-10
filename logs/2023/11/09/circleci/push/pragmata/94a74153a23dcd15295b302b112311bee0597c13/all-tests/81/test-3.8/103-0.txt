@@ -1,0 +1,65 @@
+py: install_deps> python -I -m pip install pytest pytest-cov pytest-mock
+.pkg: install_requires> python -I -m pip install 'setuptools>=46.4.0' versioningit
+.pkg: _optional_hooks> python /home/circleci/.pyenv/versions/3.8.18/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /home/circleci/.pyenv/versions/3.8.18/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_wheel> python /home/circleci/.pyenv/versions/3.8.18/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: install_requires_for_build_wheel> python -I -m pip install wheel
+.pkg: freeze> python -m pip freeze --all
+.pkg: importlib-metadata==6.8.0,packaging==23.2,pip==23.3.1,setuptools==68.2.2,tomli==2.0.1,versioningit==2.2.1,wheel==0.41.2,zipp==3.17.0
+.pkg: prepare_metadata_for_build_wheel> python /home/circleci/.pyenv/versions/3.8.18/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /home/circleci/.pyenv/versions/3.8.18/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+py: install_package_deps> python -I -m pip install 'PyYAML>=5.0' 'click-loglevel~=0.2' 'click>=7.0' 'in-place~=0.4' 'pydantic~=1.7' 'python-dateutil~=2.7' 'python-dotenv<2.0,>=0.11' 'requests~=2.20'
+py: install_package> python -I -m pip install --force-reinstall --no-deps /home/circleci/project/.tox/.tmp/package/1/tinuous-0.6.1.post45+g94a7415.tar.gz
+py: freeze> python -m pip freeze --all
+py: certifi==2023.7.22,charset-normalizer==3.3.2,click==8.1.7,click-loglevel==0.5.0,coverage==7.3.2,exceptiongroup==1.1.3,idna==3.4,in-place==0.5.0,iniconfig==2.0.0,packaging==23.2,pip==23.3.1,pluggy==1.3.0,pydantic==1.10.13,pytest==7.4.3,pytest-cov==4.1.0,pytest-mock==3.12.0,python-dateutil==2.8.2,python-dotenv==1.0.0,PyYAML==6.0.1,requests==2.31.0,setuptools==68.2.2,six==1.16.0,tinuous @ file:///home/circleci/project/.tox/.tmp/package/1/tinuous-0.6.1.post45%2Bg94a7415.tar.gz#sha256=e0e81db8298296b3caaad39c67b03bc4b3df6313b47848cb0a951122947e9a0a,tomli==2.0.1,typing_extensions==4.8.0,urllib3==2.0.7,wheel==0.41.2
+py: commands[0]> tinuous --help
+Usage: tinuous [OPTIONS] COMMAND [ARGS]...
+
+  Download build logs from GitHub Actions, Travis,
+  Appveyor, and CircleCI
+
+Options:
+  -V, --version                   Show the version
+                                  and exit.
+  -c, --config FILE               Read
+                                  configuration
+                                  from the given
+                                  file  [default:
+                                  tinuous.yaml]
+  -E, --env FILE                  Load environment
+                                  variables from
+                                  given .env file
+  -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+                                  Set logging
+                                  level  [default:
+                                  INFO]
+  --help                          Show this
+                                  message and
+                                  exit.
+
+Commands:
+  fetch         Download logs
+  fetch-commit  Download logs for a specific...
+  sanitize      Sanitize secrets in logs
+py: commands[1]> pytest --cov-report=xml test
+============================= test session starts ==============================
+platform linux -- Python 3.8.18, pytest-7.4.3, pluggy-1.3.0
+cachedir: .tox/py/.pytest_cache
+rootdir: /home/circleci/project
+configfile: tox.ini
+plugins: mock-3.12.0, cov-4.1.0
+collecting ... collected 64 items                                                             
+
+test/test_base.py .........                                              [ 14%]
+test/test_config.py ........                                             [ 26%]
+test/test_state.py ........                                              [ 39%]
+test/test_util.py .......................................                [100%]
+
+---------- coverage: platform linux, python 3.8.18-final-0 -----------
+Coverage XML written to file coverage.xml
+
+
+============================== 64 passed in 0.72s ==============================
+.pkg: _exit> python /home/circleci/.pyenv/versions/3.8.18/lib/python3.8/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+  py: OK (13.97=setup[12.66]+cmd[0.25,1.05] seconds)
+  congratulations :) (14.08 seconds)
