@@ -1,0 +1,54 @@
+py: install_deps> python -I -m pip install pytest pytest-cov pytest-mock
+.pkg: install_requires> python -I -m pip install 'setuptools>=46.4.0' versioningit
+.pkg: _optional_hooks> python /home/circleci/.pyenv/versions/3.11.9/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /home/circleci/.pyenv/versions/3.11.9/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_wheel> python /home/circleci/.pyenv/versions/3.11.9/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: install_requires_for_build_wheel> python -I -m pip install wheel
+.pkg: freeze> python -m pip freeze --all
+.pkg: packaging==24.1,pip==24.0,setuptools==69.5.1,versioningit==3.1.1,wheel==0.43.0
+.pkg: prepare_metadata_for_build_wheel> python /home/circleci/.pyenv/versions/3.11.9/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /home/circleci/.pyenv/versions/3.11.9/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+py: install_package_deps> python -I -m pip install 'PyYAML>=5.0' 'click-loglevel~=0.2' 'click>=7.0' 'ghtoken~=0.1' 'in-place~=1.0' 'pydantic~=2.0' 'python-dateutil~=2.7' 'python-dotenv<2.0,>=0.11' 'requests~=2.20' 'typing-extensions; python_version < "3.9"'
+py: install_package> python -I -m pip install --force-reinstall --no-deps /home/circleci/project/.tox/.tmp/package/1/tinuous-0.6.1.post74+g97fcd40.tar.gz
+py: freeze> python -m pip freeze --all
+py: annotated-types==0.7.0,certifi==2024.6.2,charset-normalizer==3.3.2,click==8.1.7,click-loglevel==0.5.0,coverage==7.5.3,ghtoken==0.1.0,idna==3.7,in-place==1.0.0,iniconfig==2.0.0,packaging==24.1,pip==24.0,pluggy==1.5.0,pydantic==2.7.3,pydantic_core==2.18.4,pytest==8.2.2,pytest-cov==5.0.0,pytest-mock==3.14.0,python-dateutil==2.9.0.post0,python-dotenv==1.0.1,PyYAML==6.0.1,requests==2.32.3,ruamel.yaml==0.18.6,ruamel.yaml.clib==0.2.8,setuptools==69.5.1,six==1.16.0,tinuous @ file:///home/circleci/project/.tox/.tmp/package/1/tinuous-0.6.1.post74%2Bg97fcd40.tar.gz#sha256=a184f6c9a00726923004e299b3ce59b470e0db10e235833289eac511d736710e,typing_extensions==4.12.2,urllib3==2.2.1,wheel==0.43.0
+py: commands[0]> tinuous --help
+Usage: tinuous [OPTIONS] COMMAND [ARGS]...
+
+  Download build logs from GitHub Actions, Travis, Appveyor, and CircleCI
+
+Options:
+  -V, --version                   Show the version and exit.
+  -c, --config FILE               Read configuration from the given file
+                                  [default: tinuous.yaml]
+  -E, --env FILE                  Load environment variables from given .env
+                                  file
+  -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+                                  Set logging level  [default: INFO]
+  --help                          Show this message and exit.
+
+Commands:
+  fetch         Download logs
+  fetch-commit  Download logs for a specific commit
+  sanitize      Sanitize secrets in logs
+py: commands[1]> pytest --cov-report=xml test
+============================= test session starts ==============================
+platform linux -- Python 3.11.9, pytest-8.2.2, pluggy-1.5.0
+cachedir: .tox/py/.pytest_cache
+rootdir: /home/circleci/project
+configfile: tox.ini
+plugins: mock-3.14.0, cov-5.0.0
+collecting ... collecting 17 items                                                            collected 64 items                                                             
+
+test/test_base.py .........                                              [ 14%]
+test/test_config.py ........                                             [ 26%]
+test/test_state.py ........                                              [ 39%]
+test/test_util.py .......................................                [100%]
+
+---------- coverage: platform linux, python 3.11.9-final-0 -----------
+Coverage XML written to file coverage.xml
+
+
+============================== 64 passed in 0.92s ==============================
+  py: OK (17.59=setup[15.74]+cmd[0.45,1.40] seconds)
+  congratulations :) (17.66 seconds)
