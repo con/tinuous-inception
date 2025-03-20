@@ -1,0 +1,555 @@
+﻿2025-03-19T12:33:39.5275472Z Current runner version: '2.322.0'
+2025-03-19T12:33:39.5301593Z ##[group]Operating System
+2025-03-19T12:33:39.5302384Z Ubuntu
+2025-03-19T12:33:39.5303064Z 24.04.2
+2025-03-19T12:33:39.5303729Z LTS
+2025-03-19T12:33:39.5304192Z ##[endgroup]
+2025-03-19T12:33:39.5304735Z ##[group]Runner Image
+2025-03-19T12:33:39.5305366Z Image: ubuntu-24.04
+2025-03-19T12:33:39.5305876Z Version: 20250309.1.0
+2025-03-19T12:33:39.5306897Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T12:33:39.5308261Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-19T12:33:39.5309165Z ##[endgroup]
+2025-03-19T12:33:39.5309690Z ##[group]Runner Image Provisioner
+2025-03-19T12:33:39.5310258Z 2.0.422.1
+2025-03-19T12:33:39.5310742Z ##[endgroup]
+2025-03-19T12:33:39.5313416Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T12:33:39.5315613Z Actions: write
+2025-03-19T12:33:39.5316274Z Attestations: write
+2025-03-19T12:33:39.5316973Z Checks: write
+2025-03-19T12:33:39.5317451Z Contents: write
+2025-03-19T12:33:39.5318020Z Deployments: write
+2025-03-19T12:33:39.5318521Z Discussions: write
+2025-03-19T12:33:39.5318975Z Issues: write
+2025-03-19T12:33:39.5319526Z Metadata: read
+2025-03-19T12:33:39.5320002Z Models: read
+2025-03-19T12:33:39.5320419Z Packages: write
+2025-03-19T12:33:39.5320978Z Pages: write
+2025-03-19T12:33:39.5321439Z PullRequests: write
+2025-03-19T12:33:39.5321980Z RepositoryProjects: write
+2025-03-19T12:33:39.5322552Z SecurityEvents: write
+2025-03-19T12:33:39.5323199Z Statuses: write
+2025-03-19T12:33:39.5323758Z ##[endgroup]
+2025-03-19T12:33:39.5326002Z Secret source: Actions
+2025-03-19T12:33:39.5327084Z Prepare workflow directory
+2025-03-19T12:33:39.5645391Z Prepare all required actions
+2025-03-19T12:33:39.5682294Z Getting action download info
+2025-03-19T12:33:39.9365696Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T12:33:40.0494481Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-19T12:33:40.1460080Z Download action repository 'codecov/codecov-action@v5' (SHA:0565863a31f2c772f9f0395002a31e3f06189574)
+2025-03-19T12:33:40.4465494Z Complete job name: test (pypy-3.9, py)
+2025-03-19T12:33:40.5182374Z ##[group]Run actions/checkout@v4
+2025-03-19T12:33:40.5183638Z with:
+2025-03-19T12:33:40.5184065Z   fetch-depth: 0
+2025-03-19T12:33:40.5184500Z   repository: con/tinuous
+2025-03-19T12:33:40.5185149Z   token: ***
+2025-03-19T12:33:40.5185546Z   ssh-strict: true
+2025-03-19T12:33:40.5185947Z   ssh-user: git
+2025-03-19T12:33:40.5186368Z   persist-credentials: true
+2025-03-19T12:33:40.5186847Z   clean: true
+2025-03-19T12:33:40.5187278Z   sparse-checkout-cone-mode: true
+2025-03-19T12:33:40.5187793Z   fetch-tags: false
+2025-03-19T12:33:40.5188211Z   show-progress: true
+2025-03-19T12:33:40.5188633Z   lfs: false
+2025-03-19T12:33:40.5189017Z   submodules: false
+2025-03-19T12:33:40.5189436Z   set-safe-directory: true
+2025-03-19T12:33:40.5190194Z ##[endgroup]
+2025-03-19T12:33:40.7449244Z Syncing repository: con/tinuous
+2025-03-19T12:33:40.7452105Z ##[group]Getting Git version info
+2025-03-19T12:33:40.7453667Z Working directory is '/home/runner/work/tinuous/tinuous'
+2025-03-19T12:33:40.7455724Z [command]/usr/bin/git version
+2025-03-19T12:33:40.7528194Z git version 2.48.1
+2025-03-19T12:33:40.7557725Z ##[endgroup]
+2025-03-19T12:33:40.7573445Z Temporarily overriding HOME='/home/runner/work/_temp/1ed8a643-70ce-49d6-b3a9-63a4d9e593cb' before making global git config changes
+2025-03-19T12:33:40.7575229Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T12:33:40.7578889Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/tinuous/tinuous
+2025-03-19T12:33:40.7614955Z Deleting the contents of '/home/runner/work/tinuous/tinuous'
+2025-03-19T12:33:40.7618726Z ##[group]Initializing the repository
+2025-03-19T12:33:40.7622623Z [command]/usr/bin/git init /home/runner/work/tinuous/tinuous
+2025-03-19T12:33:40.7702376Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T12:33:40.7703626Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T12:33:40.7704574Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T12:33:40.7705262Z hint:
+2025-03-19T12:33:40.7705760Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T12:33:40.7706355Z hint:
+2025-03-19T12:33:40.7706925Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T12:33:40.7708318Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T12:33:40.7709072Z hint:
+2025-03-19T12:33:40.7709472Z hint: 	git branch -m <name>
+2025-03-19T12:33:40.7714666Z Initialized empty Git repository in /home/runner/work/tinuous/tinuous/.git/
+2025-03-19T12:33:40.7726759Z [command]/usr/bin/git remote add origin https://github.com/con/tinuous
+2025-03-19T12:33:40.7761132Z ##[endgroup]
+2025-03-19T12:33:40.7762683Z ##[group]Disabling automatic garbage collection
+2025-03-19T12:33:40.7766141Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T12:33:40.7798357Z ##[endgroup]
+2025-03-19T12:33:40.7799793Z ##[group]Setting up auth
+2025-03-19T12:33:40.7806307Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T12:33:40.7840224Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T12:33:40.8157087Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T12:33:40.8188449Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T12:33:40.8490707Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T12:33:40.8495074Z ##[endgroup]
+2025-03-19T12:33:40.8496361Z ##[group]Fetching the repository
+2025-03-19T12:33:40.8500400Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +6bbf439ac8d399fcefb5d3a36e77cf52c9c93dc3:refs/remotes/pull/205/merge
+2025-03-19T12:33:41.1755356Z From https://github.com/con/tinuous
+2025-03-19T12:33:41.1757041Z  * [new branch]      gh-55                                    -> origin/gh-55
+2025-03-19T12:33:41.1759095Z  * [new branch]      master                                   -> origin/master
+2025-03-19T12:33:41.1760673Z  * [new branch]      no-extra-search                          -> origin/no-extra-search
+2025-03-19T12:33:41.1762527Z  * [new branch]      not-run                                  -> origin/not-run
+2025-03-19T12:33:41.1764513Z  * [new branch]      pragmata                                 -> origin/pragmata
+2025-03-19T12:33:41.1766564Z  * [new branch]      test-appveyor                            -> origin/test-appveyor
+2025-03-19T12:33:41.1767784Z  * [new tag]         0.1.0                                    -> 0.1.0
+2025-03-19T12:33:41.1768770Z  * [new tag]         0.2.0                                    -> 0.2.0
+2025-03-19T12:33:41.1769798Z  * [new tag]         0.3.0                                    -> 0.3.0
+2025-03-19T12:33:41.1771616Z  * [new tag]         0.4.0                                    -> 0.4.0
+2025-03-19T12:33:41.1773264Z  * [new tag]         0.5.0                                    -> 0.5.0
+2025-03-19T12:33:41.1774348Z  * [new tag]         0.5.1                                    -> 0.5.1
+2025-03-19T12:33:41.1775404Z  * [new tag]         0.5.2                                    -> 0.5.2
+2025-03-19T12:33:41.1776769Z  * [new tag]         0.5.3                                    -> 0.5.3
+2025-03-19T12:33:41.1778498Z  * [new tag]         0.5.4                                    -> 0.5.4
+2025-03-19T12:33:41.1780071Z  * [new tag]         0.6.0                                    -> 0.6.0
+2025-03-19T12:33:41.1781783Z  * [new tag]         0.6.1                                    -> 0.6.1
+2025-03-19T12:33:41.1783264Z  * [new tag]         0.7.0                                    -> 0.7.0
+2025-03-19T12:33:41.1784751Z  * [new ref]         6bbf439ac8d399fcefb5d3a36e77cf52c9c93dc3 -> pull/205/merge
+2025-03-19T12:33:41.1816474Z ##[endgroup]
+2025-03-19T12:33:41.1817694Z ##[group]Determining the checkout info
+2025-03-19T12:33:41.1819053Z ##[endgroup]
+2025-03-19T12:33:41.1823256Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T12:33:41.1869104Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T12:33:41.1898759Z ##[group]Checking out the ref
+2025-03-19T12:33:41.1901511Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/205/merge
+2025-03-19T12:33:41.1957860Z Note: switching to 'refs/remotes/pull/205/merge'.
+2025-03-19T12:33:41.1959367Z 
+2025-03-19T12:33:41.1960648Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T12:33:41.1963576Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T12:33:41.1966194Z state without impacting any branches by switching back to a branch.
+2025-03-19T12:33:41.1967562Z 
+2025-03-19T12:33:41.1968458Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T12:33:41.1970472Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T12:33:41.1971708Z 
+2025-03-19T12:33:41.1972212Z   git switch -c <new-branch-name>
+2025-03-19T12:33:41.1973300Z 
+2025-03-19T12:33:41.1973803Z Or undo this operation with:
+2025-03-19T12:33:41.1974584Z 
+2025-03-19T12:33:41.1975016Z   git switch -
+2025-03-19T12:33:41.1975717Z 
+2025-03-19T12:33:41.1976692Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T12:33:41.1978139Z 
+2025-03-19T12:33:41.1979808Z HEAD is now at 6bbf439 Merge f0f05cd0f33388aa6a52e7d962d034347c7e3b0a into c033e19e02d066f7baaa86596e5f19d566c3e202
+2025-03-19T12:33:41.1984618Z ##[endgroup]
+2025-03-19T12:33:41.2002029Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T12:33:41.2024580Z 6bbf439ac8d399fcefb5d3a36e77cf52c9c93dc3
+2025-03-19T12:33:41.2316866Z ##[group]Run actions/setup-python@v5
+2025-03-19T12:33:41.2318056Z with:
+2025-03-19T12:33:41.2318895Z   python-version: pypy-3.9
+2025-03-19T12:33:41.2319901Z   check-latest: false
+2025-03-19T12:33:41.2321064Z   token: ***
+2025-03-19T12:33:41.2321886Z   update-environment: true
+2025-03-19T12:33:41.2323047Z   allow-prereleases: false
+2025-03-19T12:33:41.2324027Z ##[endgroup]
+2025-03-19T12:33:41.4035793Z ##[group]Installed versions
+2025-03-19T12:33:41.4195639Z Successfully set up PyPy 7.3.16 with Python (3.9.19)
+2025-03-19T12:33:41.4198791Z ##[endgroup]
+2025-03-19T12:33:41.4341695Z ##[group]Run python -m pip install --upgrade pip wheel
+2025-03-19T12:33:41.4343472Z [36;1mpython -m pip install --upgrade pip wheel[0m
+2025-03-19T12:33:41.4345074Z [36;1mpython -m pip install --upgrade --upgrade-strategy=eager tox[0m
+2025-03-19T12:33:41.4401127Z shell: /usr/bin/bash -e {0}
+2025-03-19T12:33:41.4402071Z env:
+2025-03-19T12:33:41.4403239Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:41.4404719Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:41.4406195Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:41.4407685Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:41.4409384Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:33:41.4410832Z ##[endgroup]
+2025-03-19T12:33:46.9084251Z Requirement already satisfied: pip in /opt/hostedtoolcache/PyPy/3.9.19/x64/lib/pypy3.9/site-packages (23.0.1)
+2025-03-19T12:33:47.0904965Z Collecting pip
+2025-03-19T12:33:47.1202500Z   Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+2025-03-19T12:33:47.1911184Z Collecting wheel
+2025-03-19T12:33:47.2020687Z   Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+2025-03-19T12:33:47.2249318Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-03-19T12:33:47.2736638Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 69.8 MB/s eta 0:00:00
+2025-03-19T12:33:47.2967174Z Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+2025-03-19T12:33:47.4263262Z Installing collected packages: wheel, pip
+2025-03-19T12:33:47.5430811Z   Attempting uninstall: pip
+2025-03-19T12:33:47.5443593Z     Found existing installation: pip 23.0.1
+2025-03-19T12:33:47.7190083Z     Uninstalling pip-23.0.1:
+2025-03-19T12:33:47.8165962Z       Successfully uninstalled pip-23.0.1
+2025-03-19T12:33:48.9551039Z Successfully installed pip-25.0.1 wheel-0.45.1
+2025-03-19T12:33:49.9626472Z Collecting tox
+2025-03-19T12:33:49.9890692Z   Downloading tox-4.24.2-py3-none-any.whl.metadata (3.7 kB)
+2025-03-19T12:33:50.0532236Z Collecting cachetools>=5.5.1 (from tox)
+2025-03-19T12:33:50.0626790Z   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+2025-03-19T12:33:50.0945677Z Collecting chardet>=5.2 (from tox)
+2025-03-19T12:33:50.1041296Z   Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-03-19T12:33:50.1570685Z Collecting colorama>=0.4.6 (from tox)
+2025-03-19T12:33:50.1683115Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-03-19T12:33:50.2154404Z Collecting filelock>=3.16.1 (from tox)
+2025-03-19T12:33:50.2252469Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-19T12:33:50.2780069Z Collecting packaging>=24.2 (from tox)
+2025-03-19T12:33:50.2871706Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-19T12:33:50.3280792Z Collecting platformdirs>=4.3.6 (from tox)
+2025-03-19T12:33:50.3380198Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-19T12:33:50.3717914Z Collecting pluggy>=1.5 (from tox)
+2025-03-19T12:33:50.3814005Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-03-19T12:33:50.4119021Z Collecting pyproject-api>=1.8 (from tox)
+2025-03-19T12:33:50.4218329Z   Downloading pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-03-19T12:33:50.4860697Z Collecting tomli>=2.2.1 (from tox)
+2025-03-19T12:33:50.4958565Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-03-19T12:33:50.5383354Z Collecting typing-extensions>=4.12.2 (from tox)
+2025-03-19T12:33:50.5483819Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-19T12:33:50.6223495Z Collecting virtualenv>=20.29.1 (from tox)
+2025-03-19T12:33:50.6315875Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-19T12:33:50.6920072Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.29.1->tox)
+2025-03-19T12:33:50.7012766Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-19T12:33:50.7301593Z Downloading tox-4.24.2-py3-none-any.whl (172 kB)
+2025-03-19T12:33:50.7559958Z Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+2025-03-19T12:33:50.7697754Z Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-03-19T12:33:50.7881360Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-03-19T12:33:50.8021982Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-19T12:33:50.8143226Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-19T12:33:50.8280218Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-19T12:33:50.8398774Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-03-19T12:33:50.8527621Z Downloading pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-03-19T12:33:50.8723046Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-03-19T12:33:50.8854809Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-19T12:33:50.8978270Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-19T12:33:50.9456563Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 102.4 MB/s eta 0:00:00
+2025-03-19T12:33:50.9558897Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-19T12:33:51.0942823Z Installing collected packages: distlib, typing-extensions, tomli, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-03-19T12:33:52.0772474Z Successfully installed cachetools-5.5.2 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.18.0 packaging-24.2 platformdirs-4.3.6 pluggy-1.5.0 pyproject-api-1.9.0 tomli-2.2.1 tox-4.24.2 typing-extensions-4.12.2 virtualenv-20.29.3
+2025-03-19T12:33:52.0987336Z ##[group]Run tox -e py -- --cov-report=xml
+2025-03-19T12:33:52.0987696Z [36;1mtox -e py -- --cov-report=xml[0m
+2025-03-19T12:33:52.1036161Z shell: /usr/bin/bash -e {0}
+2025-03-19T12:33:52.1036398Z env:
+2025-03-19T12:33:52.1036640Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:52.1037011Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:52.1037374Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:52.1037710Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:33:52.1038092Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:33:52.1038440Z ##[endgroup]
+2025-03-19T12:33:53.4674614Z py: install_deps> python -I -m pip install pytest pytest-cov pytest-mock
+2025-03-19T12:33:56.7779176Z .pkg: install_requires> python -I -m pip install 'setuptools>=46.4.0' versioningit
+2025-03-19T12:33:58.8811569Z .pkg: _optional_hooks> python /opt/hostedtoolcache/PyPy/3.9.19/x64/lib/pypy3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-19T12:33:59.3682302Z .pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/PyPy/3.9.19/x64/lib/pypy3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-19T12:33:59.8946417Z .pkg: get_requires_for_build_wheel> python /opt/hostedtoolcache/PyPy/3.9.19/x64/lib/pypy3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-19T12:34:00.3973600Z .pkg: freeze> python -m pip freeze --all
+2025-03-19T12:34:00.8751325Z .pkg: cffi==1.17.0.dev0,greenlet==0.4.13,hpy==0.9.0,importlib_metadata==8.6.1,packaging==24.2,pip==25.0.1,readline==6.2.4.1,setuptools==75.8.0,tomli==2.2.1,versioningit==3.1.2,wheel==0.45.1,zipp==3.21.0
+2025-03-19T12:34:00.8760731Z .pkg: prepare_metadata_for_build_wheel> python /opt/hostedtoolcache/PyPy/3.9.19/x64/lib/pypy3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-19T12:34:01.4041829Z .pkg: build_sdist> python /opt/hostedtoolcache/PyPy/3.9.19/x64/lib/pypy3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-19T12:34:01.9283211Z py: install_package_deps> python -I -m pip install 'PyYAML>=5.0' 'click-loglevel~=0.2' 'click>=7.0' 'ghtoken~=0.1' 'in_place~=1.0' 'pydantic~=2.0' 'python-dateutil~=2.7' 'python-dotenv<2.0,>=0.11' 'requests~=2.20' 'typing_extensions; python_version < "3.9"'
+2025-03-19T12:34:21.1339882Z py: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.7.0.post12+g6bbf439.tar.gz
+2025-03-19T12:34:26.3209355Z py: freeze> python -m pip freeze --all
+2025-03-19T12:34:26.8854165Z py: annotated-types==0.7.0,certifi==2025.1.31,cffi==1.17.0.dev0,charset-normalizer==3.4.1,click==8.1.8,click-loglevel==0.6.0,coverage==7.7.0,exceptiongroup==1.2.2,ghtoken==0.1.2,greenlet==0.4.13,hpy==0.9.0,idna==3.10,in_place==1.0.1,iniconfig==2.0.0,packaging==24.2,pip==25.0.1,pluggy==1.5.0,pydantic==2.10.6,pydantic_core==2.27.2,pytest==8.3.5,pytest-cov==6.0.0,pytest-mock==3.14.0,python-dateutil==2.9.0.post0,python-dotenv==1.0.1,PyYAML==6.0.2,readline==6.2.4.1,requests==2.32.3,ruamel.yaml==0.18.10,setuptools==75.8.0,six==1.17.0,tinuous @ file:///home/runner/work/tinuous/tinuous/.tox/.tmp/package/1/tinuous-0.7.0.post12%2Bg6bbf439.tar.gz#sha256=89ec91559b48996f7f5f4164114c8f859386ac7f78071bc4360dcff184e4d571,tomli==2.2.1,typing_extensions==4.12.2,urllib3==2.3.0,wheel==0.45.1
+2025-03-19T12:34:26.8865209Z py: commands[0]> tinuous --help
+2025-03-19T12:34:27.8076981Z Usage: tinuous [OPTIONS] COMMAND [ARGS]...
+2025-03-19T12:34:27.8079345Z 
+2025-03-19T12:34:27.8079853Z   Download build logs from GitHub Actions, Travis, Appveyor, and CircleCI
+2025-03-19T12:34:27.8080998Z 
+2025-03-19T12:34:27.8081126Z Options:
+2025-03-19T12:34:27.8081515Z   -V, --version                   Show the version and exit.
+2025-03-19T12:34:27.8082078Z   -c, --config FILE               Read configuration from the given file
+2025-03-19T12:34:27.8083170Z                                   [default: tinuous.yaml]
+2025-03-19T12:34:27.8083706Z   -E, --env FILE                  Load environment variables from given .env
+2025-03-19T12:34:27.8084188Z                                   file
+2025-03-19T12:34:27.8084634Z   -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+2025-03-19T12:34:27.8085124Z                                   Set logging level  [default: INFO]
+2025-03-19T12:34:27.8085595Z   --help                          Show this message and exit.
+2025-03-19T12:34:27.8085912Z 
+2025-03-19T12:34:27.8086025Z Commands:
+2025-03-19T12:34:27.8086298Z   fetch         Download logs
+2025-03-19T12:34:27.8086706Z   fetch-commit  Download logs for a specific commit
+2025-03-19T12:34:27.8087177Z   sanitize      Sanitize secrets in logs
+2025-03-19T12:34:27.8164864Z py: commands[1]> pytest --cov-report=xml test
+2025-03-19T12:34:32.4005557Z ============================= test session starts ==============================
+2025-03-19T12:34:32.4006562Z platform linux -- Python 3.9.19[pypy-7.3.16-final], pytest-8.3.5, pluggy-1.5.0
+2025-03-19T12:34:32.4007267Z cachedir: .tox/py/.pytest_cache
+2025-03-19T12:34:32.4007558Z rootdir: /home/runner/work/tinuous/tinuous
+2025-03-19T12:34:32.4007844Z configfile: tox.ini
+2025-03-19T12:34:32.4008067Z plugins: cov-6.0.0, mock-3.14.0
+2025-03-19T12:34:32.4008317Z collected 64 items
+2025-03-19T12:34:32.4008447Z 
+2025-03-19T12:34:32.5071215Z test/test_base.py .........                                              [ 14%]
+2025-03-19T12:34:32.5914314Z test/test_config.py ........                                             [ 26%]
+2025-03-19T12:34:32.7669610Z test/test_state.py ........                                              [ 39%]
+2025-03-19T12:34:34.1137430Z test/test_util.py .......................................                [100%]
+2025-03-19T12:34:34.1138019Z 
+2025-03-19T12:34:34.1140216Z ---------- coverage: platform linux, python 3.9.19-final-0 -----------
+2025-03-19T12:34:34.1141561Z Coverage XML written to file coverage.xml
+2025-03-19T12:34:34.1141922Z 
+2025-03-19T12:34:34.1141962Z 
+2025-03-19T12:34:34.1142197Z ============================== 64 passed in 4.95s ==============================
+2025-03-19T12:34:34.1287221Z   py: OK (41.27=setup[34.03]+cmd[0.93,6.31] seconds)
+2025-03-19T12:34:34.1287748Z   congratulations :) (41.50 seconds)
+2025-03-19T12:34:34.1606735Z ##[group]Run codecov/codecov-action@v5
+2025-03-19T12:34:34.1607018Z with:
+2025-03-19T12:34:34.1607201Z   fail_ci_if_error: false
+2025-03-19T12:34:34.1607662Z   token: ***
+2025-03-19T12:34:34.1607854Z   name: pypy-3.9
+2025-03-19T12:34:34.1608048Z   disable_file_fixes: false
+2025-03-19T12:34:34.1608264Z   disable_search: false
+2025-03-19T12:34:34.1608498Z   disable_safe_directory: false
+2025-03-19T12:34:34.1608712Z   disable_telem: false
+2025-03-19T12:34:34.1608898Z   dry_run: false
+2025-03-19T12:34:34.1609072Z   git_service: github
+2025-03-19T12:34:34.1609271Z   gcov_executable: gcov
+2025-03-19T12:34:34.1609480Z   handle_no_reports_found: false
+2025-03-19T12:34:34.1609705Z   recurse_submodules: false
+2025-03-19T12:34:34.1609927Z   run_command: upload-coverage
+2025-03-19T12:34:34.1610149Z   skip_validation: false
+2025-03-19T12:34:34.1610363Z   use_legacy_upload_endpoint: false
+2025-03-19T12:34:34.1610594Z   use_oidc: false
+2025-03-19T12:34:34.1610769Z   use_pypi: false
+2025-03-19T12:34:34.1610977Z   verbose: false
+2025-03-19T12:34:34.1611149Z   version: latest
+2025-03-19T12:34:34.1611320Z env:
+2025-03-19T12:34:34.1611548Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1611887Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1612220Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1612725Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1613271Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.1613609Z ##[endgroup]
+2025-03-19T12:34:34.1707394Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2025-03-19T12:34:34.1707828Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2025-03-19T12:34:34.1708236Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2025-03-19T12:34:34.1756730Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.1757062Z env:
+2025-03-19T12:34:34.1757308Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1757676Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1758028Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1758368Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1758756Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.1759098Z ##[endgroup]
+2025-03-19T12:34:34.1839090Z [0;32m==>[0m Running Action version 5.4.0
+2025-03-19T12:34:34.1881872Z ##[group]Run git config --global --add safe.directory "/home/runner/work/tinuous/tinuous"
+2025-03-19T12:34:34.1882402Z [36;1mgit config --global --add safe.directory "/home/runner/work/tinuous/tinuous"[0m
+2025-03-19T12:34:34.1883037Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2025-03-19T12:34:34.1925224Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.1925548Z env:
+2025-03-19T12:34:34.1925785Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1926124Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1926456Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1926781Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.1927160Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.1927488Z ##[endgroup]
+2025-03-19T12:34:34.2041822Z ##[group]Run CC_FORK="false"
+2025-03-19T12:34:34.2042061Z [36;1mCC_FORK="false"[0m
+2025-03-19T12:34:34.2042551Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2025-03-19T12:34:34.2043259Z [36;1mthen[0m
+2025-03-19T12:34:34.2043484Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2025-03-19T12:34:34.2043771Z [36;1m  CC_FORK="true"[0m
+2025-03-19T12:34:34.2043964Z [36;1mfi[0m
+2025-03-19T12:34:34.2044358Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2086997Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.2087333Z env:
+2025-03-19T12:34:34.2087568Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2087896Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2088231Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2088572Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2088944Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.2089320Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: con:not-run
+2025-03-19T12:34:34.2089648Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: con/tinuous
+2025-03-19T12:34:34.2089943Z   GITHUB_REPOSITORY: con/tinuous
+2025-03-19T12:34:34.2090162Z ##[endgroup]
+2025-03-19T12:34:34.2174617Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2025-03-19T12:34:34.2175007Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2025-03-19T12:34:34.2175286Z [36;1mthen[0m
+2025-03-19T12:34:34.2175476Z [36;1m  # {"count":1984,"value":"***"}[0m
+2025-03-19T12:34:34.2175866Z [36;1m  echo -e "\033[0;32m==>\033[0m Requesting OIDC token from '$ACTIONS_ID_TOKEN_REQUEST_URL'"[0m
+2025-03-19T12:34:34.2176563Z [36;1m  CC_TOKEN=$(curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$CC_OIDC_AUDIENCE" | cut -d\" -f6)[0m
+2025-03-19T12:34:34.2177335Z [36;1m  echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2177607Z [36;1melif [ -n "" ];[0m
+2025-03-19T12:34:34.2177803Z [36;1mthen[0m
+2025-03-19T12:34:34.2178029Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2025-03-19T12:34:34.2178318Z [36;1m    echo "CC_TOKEN=" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2178564Z [36;1melse[0m
+2025-03-19T12:34:34.2178873Z [36;1m  if [ -n "***" ];[0m
+2025-03-19T12:34:34.2179081Z [36;1m  then[0m
+2025-03-19T12:34:34.2179313Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2025-03-19T12:34:34.2179734Z [36;1m    CC_TOKEN=$(echo "***" | tr -d '\n')[0m
+2025-03-19T12:34:34.2180014Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2180275Z [36;1m  fi[0m
+2025-03-19T12:34:34.2180444Z [36;1mfi[0m
+2025-03-19T12:34:34.2222054Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.2222366Z env:
+2025-03-19T12:34:34.2222605Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2223073Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2223418Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2223752Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2224122Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.2224452Z   CC_FORK: false
+2025-03-19T12:34:34.2224684Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-03-19T12:34:34.2224926Z ##[endgroup]
+2025-03-19T12:34:34.2286333Z [0;32m==>[0m Token set from input
+2025-03-19T12:34:34.2323339Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2025-03-19T12:34:34.2323792Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2025-03-19T12:34:34.2324113Z [36;1mthen[0m
+2025-03-19T12:34:34.2324469Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-03-19T12:34:34.2324925Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-03-19T12:34:34.2325258Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-03-19T12:34:34.2325571Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2325833Z [36;1mfi[0m
+2025-03-19T12:34:34.2326002Z [36;1m[0m
+2025-03-19T12:34:34.2326201Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2368100Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.2368415Z env:
+2025-03-19T12:34:34.2368646Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2368986Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2369315Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2369638Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2370024Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.2370357Z   CC_FORK: false
+2025-03-19T12:34:34.2370615Z   CC_TOKEN: ***
+2025-03-19T12:34:34.2370796Z   CC_BRANCH: 
+2025-03-19T12:34:34.2371009Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: con:not-run
+2025-03-19T12:34:34.2371339Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: con/tinuous
+2025-03-19T12:34:34.2371645Z   GITHUB_REPOSITORY: con/tinuous
+2025-03-19T12:34:34.2371860Z ##[endgroup]
+2025-03-19T12:34:34.2455694Z ##[group]Run if [ -z "$CC_SHA" ];
+2025-03-19T12:34:34.2455964Z [36;1mif [ -z "$CC_SHA" ];[0m
+2025-03-19T12:34:34.2456176Z [36;1mthen[0m
+2025-03-19T12:34:34.2456403Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2025-03-19T12:34:34.2456675Z [36;1mfi[0m
+2025-03-19T12:34:34.2456924Z [36;1mif [ -z "$CC_PR" ] && [ "${GITHUB_EVENT_NAME}" == "pull_request_target" ];[0m
+2025-03-19T12:34:34.2457234Z [36;1mthen[0m
+2025-03-19T12:34:34.2457578Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2025-03-19T12:34:34.2457813Z [36;1mfi[0m
+2025-03-19T12:34:34.2457980Z [36;1m[0m
+2025-03-19T12:34:34.2458165Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2458439Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2025-03-19T12:34:34.2500322Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.2500630Z env:
+2025-03-19T12:34:34.2500863Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2501207Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2501545Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2501887Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2502269Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.2502589Z   CC_FORK: false
+2025-03-19T12:34:34.2502840Z   CC_TOKEN: ***
+2025-03-19T12:34:34.2503269Z   CC_BRANCH: 
+2025-03-19T12:34:34.2503441Z   CC_PR: 
+2025-03-19T12:34:34.2503598Z   CC_SHA: 
+2025-03-19T12:34:34.2503768Z   GITHUB_EVENT_NAME: pull_request
+2025-03-19T12:34:34.2503999Z   GITHUB_EVENT_NUMBER: 205
+2025-03-19T12:34:34.2504312Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: f0f05cd0f33388aa6a52e7d962d034347c7e3b0a
+2025-03-19T12:34:34.2504651Z ##[endgroup]
+2025-03-19T12:34:34.2593774Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2025-03-19T12:34:34.2594117Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2025-03-19T12:34:34.2635924Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T12:34:34.2636249Z env:
+2025-03-19T12:34:34.2636500Z   pythonLocation: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2636846Z   Python_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2637175Z   Python2_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2637505Z   Python3_ROOT_DIR: /opt/hostedtoolcache/PyPy/3.9.19/x64
+2025-03-19T12:34:34.2637876Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/PyPy/3.9.19/x64/bin/lib/pkgconfig
+2025-03-19T12:34:34.2638213Z   CC_FORK: false
+2025-03-19T12:34:34.2638476Z   CC_TOKEN: ***
+2025-03-19T12:34:34.2638654Z   CC_BRANCH: 
+2025-03-19T12:34:34.2638864Z   CC_SHA: f0f05cd0f33388aa6a52e7d962d034347c7e3b0a
+2025-03-19T12:34:34.2639116Z   CC_PR: 
+2025-03-19T12:34:34.2639282Z   CC_BASE_SHA: 
+2025-03-19T12:34:34.2639452Z   CC_BINARY: 
+2025-03-19T12:34:34.2639610Z   CC_BUILD: 
+2025-03-19T12:34:34.2639777Z   CC_BUILD_URL: 
+2025-03-19T12:34:34.2639945Z   CC_CODE: 
+2025-03-19T12:34:34.2640103Z   CC_DIR: 
+2025-03-19T12:34:34.2640276Z   CC_DISABLE_FILE_FIXES: false
+2025-03-19T12:34:34.2640491Z   CC_DISABLE_SEARCH: false
+2025-03-19T12:34:34.2640853Z   CC_DISABLE_TELEM: false
+2025-03-19T12:34:34.2641054Z   CC_DRY_RUN: false
+2025-03-19T12:34:34.2641244Z   CC_ENTERPRISE_URL: 
+2025-03-19T12:34:34.2641428Z   CC_ENV: 
+2025-03-19T12:34:34.2641584Z   CC_EXCLUDES: 
+2025-03-19T12:34:34.2641765Z   CC_FAIL_ON_ERROR: false
+2025-03-19T12:34:34.2641962Z   CC_FILES: 
+2025-03-19T12:34:34.2642130Z   CC_FLAGS: 
+2025-03-19T12:34:34.2642300Z   CC_FORCE: 
+2025-03-19T12:34:34.2642459Z   CC_GCOV_ARGS: 
+2025-03-19T12:34:34.2642647Z   CC_GCOV_EXECUTABLE: gcov
+2025-03-19T12:34:34.2642847Z   CC_GCOV_IGNORE: 
+2025-03-19T12:34:34.2643297Z   CC_GCOV_INCLUDE: 
+2025-03-19T12:34:34.2643514Z   CC_GIT_SERVICE: github
+2025-03-19T12:34:34.2643728Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2025-03-19T12:34:34.2643951Z   CC_JOB_CODE: 
+2025-03-19T12:34:34.2644125Z   CC_LEGACY: false
+2025-03-19T12:34:34.2644309Z   CC_NAME: pypy-3.9
+2025-03-19T12:34:34.2644497Z   CC_NETWORK_FILTER: 
+2025-03-19T12:34:34.2644691Z   CC_NETWORK_PREFIX: 
+2025-03-19T12:34:34.2644883Z   CC_NETWORK_ROOT_FOLDER: 
+2025-03-19T12:34:34.2645081Z   CC_OS: 
+2025-03-19T12:34:34.2645245Z   CC_PARENT_SHA: 
+2025-03-19T12:34:34.2645420Z   CC_PLUGINS: 
+2025-03-19T12:34:34.2645611Z   CC_RECURSE_SUBMODULES: false
+2025-03-19T12:34:34.2645818Z   CC_REPORT_TYPE: 
+2025-03-19T12:34:34.2646017Z   CC_RUN_CMD: upload-coverage
+2025-03-19T12:34:34.2646232Z   CC_SERVICE: github
+2025-03-19T12:34:34.2646571Z   CC_SKIP_VALIDATION: false
+2025-03-19T12:34:34.2646779Z   CC_SLUG: 
+2025-03-19T12:34:34.2646943Z   CC_SWIFT_PROJECT: 
+2025-03-19T12:34:34.2647134Z   CC_USE_PYPI: false
+2025-03-19T12:34:34.2647320Z   CC_VERBOSE: false
+2025-03-19T12:34:34.2647498Z   CC_VERSION: latest
+2025-03-19T12:34:34.2647679Z   CC_YML_PATH: 
+2025-03-19T12:34:34.2647852Z ##[endgroup]
+2025-03-19T12:34:34.2734762Z      _____          _
+2025-03-19T12:34:34.2735144Z     / ____|        | |
+2025-03-19T12:34:34.2735473Z    | |     ___   __| | ___  ___ _____   __
+2025-03-19T12:34:34.2735754Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-03-19T12:34:34.2736003Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-03-19T12:34:34.2736243Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-03-19T12:34:34.2736689Z                            [0;31m Wrapper-0.2.0[0m
+2025-03-19T12:34:34.2736974Z                                   
+2025-03-19T12:34:34.2837204Z [0;32m==>[0m Detected [0;36mlinux[0m
+2025-03-19T12:34:34.2837741Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov[0m
+2025-03-19T12:34:34.2926947Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-03-19T12:34:34.2927825Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-03-19T12:34:34.2928209Z 
+2025-03-19T12:34:34.6625874Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-03-19T12:34:34.6626623Z 100 27.5M  100 27.5M    0     0  74.4M      0 --:--:-- --:--:-- --:--:-- 74.6M
+2025-03-19T12:34:34.6650927Z [0;32m==>[0m Finishing downloading [0;36mlinux:latest[0m
+2025-03-19T12:34:34.7297601Z       Version: [0;36mv10.2.1[0m
+2025-03-19T12:34:34.7298240Z  
+2025-03-19T12:34:34.8603349Z gpg: directory '/home/runner/.gnupg' created
+2025-03-19T12:34:34.8606691Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2025-03-19T12:34:34.8628333Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2025-03-19T12:34:34.8629921Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2025-03-19T12:34:34.8785450Z gpg: Total number processed: 1
+2025-03-19T12:34:34.8785900Z gpg:               imported: 1
+2025-03-19T12:34:34.8790844Z [0;32m==>[0m Verifying GPG signature integrity
+2025-03-19T12:34:34.8791753Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM[0m
+2025-03-19T12:34:34.8792783Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM.sig[0m
+2025-03-19T12:34:34.8793691Z  
+2025-03-19T12:34:35.0039364Z gpg: Signature made Wed Mar 12 16:00:55 2025 UTC
+2025-03-19T12:34:35.0040376Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2025-03-19T12:34:35.0043571Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2025-03-19T12:34:35.0044566Z gpg: WARNING: This key is not certified with a trusted signature!
+2025-03-19T12:34:35.0045262Z gpg:          There is no indication that the signature belongs to the owner.
+2025-03-19T12:34:35.0046018Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2025-03-19T12:34:35.1718487Z codecov: OK
+2025-03-19T12:34:35.1729134Z [0;32m==>[0m CLI integrity verified
+2025-03-19T12:34:35.1729464Z 
+2025-03-19T12:34:35.1807203Z [0;32m ->[0m Token of length 36 detected
+2025-03-19T12:34:35.2381172Z [0;32m==>[0m Running upload-coverage
+2025-03-19T12:34:35.2393262Z       [0;36m./codecov  upload-coverage -t <redacted> --git-service github --sha f0f05cd0f33388aa6a52e7d962d034347c7e3b0a --gcov-executable gcov --name pypy-3.9[0m
+2025-03-19T12:34:35.8785567Z info - 2025-03-19 12:34:35,878 -- ci service found: github-actions
+2025-03-19T12:34:35.9033049Z warning - 2025-03-19 12:34:35,903 -- xcrun is not installed or can't be found.
+2025-03-19T12:34:35.9451971Z warning - 2025-03-19 12:34:35,945 -- No gcov data found.
+2025-03-19T12:34:35.9455592Z warning - 2025-03-19 12:34:35,945 -- coverage.py is not installed or can't be found.
+2025-03-19T12:34:35.9551178Z info - 2025-03-19 12:34:35,954 -- Found 1 coverage files to report
+2025-03-19T12:34:35.9551970Z info - 2025-03-19 12:34:35,955 -- > /home/runner/work/tinuous/tinuous/coverage.xml
+2025-03-19T12:34:36.4316321Z info - 2025-03-19 12:34:36,431 -- Your upload is now processing. When finished, results will be available at: https://app.codecov.io/github/con/tinuous/commit/f0f05cd0f33388aa6a52e7d962d034347c7e3b0a
+2025-03-19T12:34:36.5275670Z info - 2025-03-19 12:34:36,527 -- Process Upload complete
+2025-03-19T12:34:36.6499376Z Post job cleanup.
+2025-03-19T12:34:36.8137347Z Post job cleanup.
+2025-03-19T12:34:36.9071290Z [command]/usr/bin/git version
+2025-03-19T12:34:36.9108984Z git version 2.48.1
+2025-03-19T12:34:36.9152672Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/114d191c-0bc9-4d09-be13-0267fcfb20aa/.gitconfig'
+2025-03-19T12:34:36.9162049Z Temporarily overriding HOME='/home/runner/work/_temp/114d191c-0bc9-4d09-be13-0267fcfb20aa' before making global git config changes
+2025-03-19T12:34:36.9163791Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T12:34:36.9168216Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/tinuous/tinuous
+2025-03-19T12:34:36.9204584Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T12:34:36.9237051Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T12:34:36.9476278Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T12:34:36.9499305Z http.https://github.com/.extraheader
+2025-03-19T12:34:36.9516751Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T12:34:36.9554070Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T12:34:36.9905086Z Cleaning up orphan processes
