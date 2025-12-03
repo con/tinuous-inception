@@ -1,0 +1,63 @@
+py: install_deps> python -I -m pip install pytest pytest-cov pytest-mock
+.pkg: install_requires> python -I -m pip install 'setuptools>=46.4.0' versioningit
+.pkg: _optional_hooks> python /home/circleci/.pyenv/versions/3.9.25/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /home/circleci/.pyenv/versions/3.9.25/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_wheel> python /home/circleci/.pyenv/versions/3.9.25/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: freeze> python -m pip freeze --all
+.pkg: importlib_metadata==8.7.0,packaging==25.0,pip==25.3,setuptools==80.9.0,tomli==2.3.0,versioningit==3.3.0,zipp==3.23.0
+.pkg: prepare_metadata_for_build_wheel> python /home/circleci/.pyenv/versions/3.9.25/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /home/circleci/.pyenv/versions/3.9.25/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+py: install_package_deps> python -I -m pip install 'PyYAML>=5.0' 'click-loglevel~=0.2' 'click>=7.0' 'ghtoken~=0.1' 'in_place~=1.0' 'pydantic~=2.0' 'python-dateutil~=2.7' 'python-dotenv<2.0,>=0.11' 'requests~=2.20'
+py: install_package> python -I -m pip install --force-reinstall --no-deps /home/circleci/project/.tox/.tmp/package/1/tinuous-0.7.2.post2+g5ebde2e.tar.gz
+py: freeze> python -m pip freeze --all
+py: annotated-types==0.7.0,certifi==2025.11.12,charset-normalizer==3.4.4,click==8.1.8,click-loglevel==0.7.0,coverage==7.10.7,exceptiongroup==1.3.1,ghtoken==0.1.2,idna==3.11,in_place==1.0.1,iniconfig==2.1.0,packaging==25.0,pip==25.3,pluggy==1.6.0,pydantic==2.12.5,pydantic_core==2.41.5,Pygments==2.19.2,pytest==8.4.2,pytest-cov==7.0.0,pytest-mock==3.15.1,python-dateutil==2.9.0.post0,python-dotenv==1.2.1,PyYAML==6.0.3,requests==2.32.5,ruamel.yaml==0.18.16,ruamel.yaml.clib==0.2.15,setuptools==80.9.0,six==1.17.0,tinuous @ file:///home/circleci/project/.tox/.tmp/package/1/tinuous-0.7.2.post2%2Bg5ebde2e.tar.gz#sha256=b841071f127c782c9658c82708be45b38167ce30c86954873dc29560efd6cbda,tomli==2.3.0,typing-inspection==0.4.2,typing_extensions==4.15.0,urllib3==2.5.0
+py: commands[0]> tinuous --help
+Usage: tinuous [OPTIONS] COMMAND [ARGS]...
+
+  Download build logs from GitHub Actions, Travis,
+  Appveyor, and CircleCI
+
+Options:
+  -V, --version                   Show the version
+                                  and exit.
+  -c, --config FILE               Read
+                                  configuration
+                                  from the given
+                                  file  [default:
+                                  tinuous.yaml]
+  -E, --env FILE                  Load environment
+                                  variables from
+                                  given .env file
+  -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+                                  Set logging
+                                  level  [default:
+                                  INFO]
+  --help                          Show this
+                                  message and
+                                  exit.
+
+Commands:
+  fetch         Download logs
+  fetch-commit  Download logs for a specific...
+  sanitize      Sanitize secrets in logs
+py: commands[1]> pytest --cov-report=xml test
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0
+cachedir: .tox/py/.pytest_cache
+rootdir: /home/circleci/project
+configfile: tox.ini
+plugins: mock-3.15.1, cov-7.0.0
+collecting ... collecting 25 items                                                            collected 64 items                                                             
+
+test/test_base.py .........                                              [ 14%]
+test/test_config.py ........                                             [ 26%]
+test/test_state.py ........                                              [ 39%]
+test/test_util.py .......................................                [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.9.25-final-0 ________________
+
+Coverage XML written to file coverage.xml
+============================== 64 passed in 1.10s ==============================
+  py: OK (15.15=setup[13.20]+cmd[0.34,1.62] seconds)
+  congratulations :) (15.18 seconds)

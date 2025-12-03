@@ -1,0 +1,54 @@
+py: install_deps> python -I -m pip install pytest pytest-cov pytest-mock
+.pkg: install_requires> python -I -m pip install 'setuptools>=46.4.0' versioningit
+.pkg: _optional_hooks> python /home/circleci/.pyenv/versions/3.11.14/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /home/circleci/.pyenv/versions/3.11.14/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_wheel> python /home/circleci/.pyenv/versions/3.11.14/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: freeze> python -m pip freeze --all
+.pkg: packaging==25.0,pip==25.3,setuptools==80.9.0,versioningit==3.3.0
+.pkg: prepare_metadata_for_build_wheel> python /home/circleci/.pyenv/versions/3.11.14/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /home/circleci/.pyenv/versions/3.11.14/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+py: install_package_deps> python -I -m pip install 'PyYAML>=5.0' 'click-loglevel~=0.2' 'click>=7.0' 'ghtoken~=0.1' 'in_place~=1.0' 'pydantic~=2.0' 'python-dateutil~=2.7' 'python-dotenv<2.0,>=0.11' 'requests~=2.20'
+py: install_package> python -I -m pip install --force-reinstall --no-deps /home/circleci/project/.tox/.tmp/package/1/tinuous-0.7.2.post2+g6546302.tar.gz
+py: freeze> python -m pip freeze --all
+py: annotated-types==0.7.0,certifi==2025.11.12,charset-normalizer==3.4.4,click==8.3.1,click-loglevel==0.7.0,coverage==7.12.0,ghtoken==0.1.2,idna==3.11,in_place==1.0.1,iniconfig==2.3.0,packaging==25.0,pip==25.3,pluggy==1.6.0,pydantic==2.12.5,pydantic_core==2.41.5,Pygments==2.19.2,pytest==9.0.1,pytest-cov==7.0.0,pytest-mock==3.15.1,python-dateutil==2.9.0.post0,python-dotenv==1.2.1,PyYAML==6.0.3,requests==2.32.5,ruamel.yaml==0.18.16,ruamel.yaml.clib==0.2.15,setuptools==80.9.0,six==1.17.0,tinuous @ file:///home/circleci/project/.tox/.tmp/package/1/tinuous-0.7.2.post2%2Bg6546302.tar.gz#sha256=2ddaef3a492f053274a7267fa4afe7b9bd44f437bd1069c81abaa3660c9d737c,typing-inspection==0.4.2,typing_extensions==4.15.0,urllib3==2.5.0
+py: commands[0]> tinuous --help
+Usage: tinuous [OPTIONS] COMMAND [ARGS]...
+
+  Download build logs from GitHub Actions, Travis, Appveyor, and CircleCI
+
+Options:
+  -V, --version                   Show the version and exit.
+  -c, --config FILE               Read configuration from the given file
+                                  [default: tinuous.yaml]
+  -E, --env FILE                  Load environment variables from given .env
+                                  file
+  -l, --log-level [NOTSET|DEBUG|INFO|WARNING|ERROR|CRITICAL]
+                                  Set logging level  [default: INFO]
+  --help                          Show this message and exit.
+
+Commands:
+  fetch         Download logs
+  fetch-commit  Download logs for a specific commit
+  sanitize      Sanitize secrets in logs
+py: commands[1]> pytest --cov-report=xml test
+]9;4;3;\============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.1, pluggy-1.6.0
+cachedir: .tox/py/.pytest_cache
+rootdir: /home/circleci/project
+configfile: tox.ini
+plugins: mock-3.15.1, cov-7.0.0
+collecting ... collecting 70 items                                                            collected 70 items                                                             
+
+test/test_base.py ]9;4;1;0\.]9;4;1;1\.]9;4;1;2\.]9;4;1;4\.]9;4;1;5\.]9;4;1;7\.]9;4;1;8\.]9;4;1;10\.]9;4;1;11\.                                              [ 12%]
+test/test_config.py ]9;4;1;12\.]9;4;1;14\.]9;4;1;15\.]9;4;1;17\.]9;4;1;18\.]9;4;1;20\.]9;4;1;21\.]9;4;1;22\.                                             [ 24%]
+test/test_github.py ]9;4;1;24\.]9;4;1;25\.]9;4;1;27\.]9;4;1;28\.]9;4;1;30\.]9;4;1;31\.                                               [ 32%]
+test/test_state.py ]9;4;1;32\.]9;4;1;34\.]9;4;1;35\.]9;4;1;37\.]9;4;1;38\.]9;4;1;40\.]9;4;1;41\.]9;4;1;42\.                                              [ 44%]
+test/test_util.py ]9;4;1;44\.]9;4;1;45\.]9;4;1;47\.]9;4;1;48\.]9;4;1;50\.]9;4;1;51\.]9;4;1;52\.]9;4;1;54\.]9;4;1;55\.]9;4;1;57\.]9;4;1;58\.]9;4;1;60\.]9;4;1;61\.]9;4;1;62\.]9;4;1;64\.]9;4;1;65\.]9;4;1;67\.]9;4;1;68\.]9;4;1;70\.]9;4;1;71\.]9;4;1;72\.]9;4;1;74\.]9;4;1;75\.]9;4;1;77\.]9;4;1;78\.]9;4;1;80\.]9;4;1;81\.]9;4;1;82\.]9;4;1;84\.]9;4;1;85\.]9;4;1;87\.]9;4;1;88\.]9;4;1;90\.]9;4;1;91\.]9;4;1;92\.]9;4;1;94\.]9;4;1;95\.]9;4;1;97\.]9;4;1;98\.                [100%]]9;4;0;\
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.11.14-final-0 _______________
+
+Coverage XML written to file coverage.xml
+============================== 70 passed in 0.85s ==============================
+  py: OK (13.66=setup[11.96]+cmd[0.38,1.32] seconds)
+  congratulations :) (13.69 seconds)

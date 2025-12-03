@@ -1,0 +1,113 @@
+﻿2025-12-03T01:52:05.3028039Z ##[group]Run actions/checkout@v4
+2025-12-03T01:52:05.3029268Z with:
+2025-12-03T01:52:05.3029954Z   fetch-depth: 0
+2025-12-03T01:52:05.3030686Z   repository: con/tinuous
+2025-12-03T01:52:05.3031725Z   token: ***
+2025-12-03T01:52:05.3032412Z   ssh-strict: true
+2025-12-03T01:52:05.3033145Z   ssh-user: git
+2025-12-03T01:52:05.3033882Z   persist-credentials: true
+2025-12-03T01:52:05.3034691Z   clean: true
+2025-12-03T01:52:05.3035625Z   sparse-checkout-cone-mode: true
+2025-12-03T01:52:05.3036500Z   fetch-tags: false
+2025-12-03T01:52:05.3037227Z   show-progress: true
+2025-12-03T01:52:05.3037949Z   lfs: false
+2025-12-03T01:52:05.3038604Z   submodules: false
+2025-12-03T01:52:05.3039324Z   set-safe-directory: true
+2025-12-03T01:52:05.3040344Z ##[endgroup]
+2025-12-03T01:52:05.4115626Z Syncing repository: con/tinuous
+2025-12-03T01:52:05.4117889Z ##[group]Getting Git version info
+2025-12-03T01:52:05.4119033Z Working directory is '/home/runner/work/tinuous/tinuous'
+2025-12-03T01:52:05.4120656Z [command]/usr/bin/git version
+2025-12-03T01:52:05.4209062Z git version 2.52.0
+2025-12-03T01:52:05.4234412Z ##[endgroup]
+2025-12-03T01:52:05.4248284Z Temporarily overriding HOME='/home/runner/work/_temp/63b06b7a-f97b-4b3b-b0b1-9128d8a50b29' before making global git config changes
+2025-12-03T01:52:05.4250804Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-03T01:52:05.4252977Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/tinuous/tinuous
+2025-12-03T01:52:05.4290244Z Deleting the contents of '/home/runner/work/tinuous/tinuous'
+2025-12-03T01:52:05.4293471Z ##[group]Initializing the repository
+2025-12-03T01:52:05.4297517Z [command]/usr/bin/git init /home/runner/work/tinuous/tinuous
+2025-12-03T01:52:05.4428116Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-03T01:52:05.4430374Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-03T01:52:05.4432468Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-03T01:52:05.4434093Z hint: call:
+2025-12-03T01:52:05.4435487Z hint:
+2025-12-03T01:52:05.4437050Z hint: 	git config --global init.defaultBranch <name>
+2025-12-03T01:52:05.4438862Z hint:
+2025-12-03T01:52:05.4440643Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-03T01:52:05.4443311Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-03T01:52:05.4445756Z hint:
+2025-12-03T01:52:05.4447014Z hint: 	git branch -m <name>
+2025-12-03T01:52:05.4448384Z hint:
+2025-12-03T01:52:05.4450114Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-03T01:52:05.4452843Z Initialized empty Git repository in /home/runner/work/tinuous/tinuous/.git/
+2025-12-03T01:52:05.4455737Z [command]/usr/bin/git remote add origin https://github.com/con/tinuous
+2025-12-03T01:52:05.4483742Z ##[endgroup]
+2025-12-03T01:52:05.4486229Z ##[group]Disabling automatic garbage collection
+2025-12-03T01:52:05.4488232Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-03T01:52:05.4516708Z ##[endgroup]
+2025-12-03T01:52:05.4518820Z ##[group]Setting up auth
+2025-12-03T01:52:05.4524275Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-03T01:52:05.4556282Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-03T01:52:05.4908888Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-03T01:52:05.4947942Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-03T01:52:05.5163219Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-03T01:52:05.5192549Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-03T01:52:05.5412120Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-03T01:52:05.5445888Z ##[endgroup]
+2025-12-03T01:52:05.5447204Z ##[group]Fetching the repository
+2025-12-03T01:52:05.5456557Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +033c145d320ecfa0b0d5e1d39fcf560df46271d2:refs/remotes/pull/221/merge
+2025-12-03T01:52:05.8113641Z From https://github.com/con/tinuous
+2025-12-03T01:52:05.8116144Z  * [new branch]      bf-circleci                              -> origin/bf-circleci
+2025-12-03T01:52:05.8118970Z  * [new branch]      copilot/fix-workflow-overlap-issue       -> origin/copilot/fix-workflow-overlap-issue
+2025-12-03T01:52:05.8121241Z  * [new branch]      copilot/make-travis-testing-optional     -> origin/copilot/make-travis-testing-optional
+2025-12-03T01:52:05.8123566Z  * [new branch]      copilot/support-github-packages          -> origin/copilot/support-github-packages
+2025-12-03T01:52:05.8125878Z  * [new branch]      dependabot/github_actions/actions/checkout-6 -> origin/dependabot/github_actions/actions/checkout-6
+2025-12-03T01:52:05.8128474Z  * [new branch]      dependabot/github_actions/actions/setup-python-6 -> origin/dependabot/github_actions/actions/setup-python-6
+2025-12-03T01:52:05.8130263Z  * [new branch]      gh-55                                    -> origin/gh-55
+2025-12-03T01:52:05.8131467Z  * [new branch]      master                                   -> origin/master
+2025-12-03T01:52:05.8132780Z  * [new branch]      no-extra-search                          -> origin/no-extra-search
+2025-12-03T01:52:05.8134128Z  * [new branch]      pragmata                                 -> origin/pragmata
+2025-12-03T01:52:05.8135718Z  * [new branch]      test-appveyor                            -> origin/test-appveyor
+2025-12-03T01:52:05.8136985Z  * [new tag]         0.1.0                                    -> 0.1.0
+2025-12-03T01:52:05.8138083Z  * [new tag]         0.2.0                                    -> 0.2.0
+2025-12-03T01:52:05.8139192Z  * [new tag]         0.3.0                                    -> 0.3.0
+2025-12-03T01:52:05.8140280Z  * [new tag]         0.4.0                                    -> 0.4.0
+2025-12-03T01:52:05.8141324Z  * [new tag]         0.5.0                                    -> 0.5.0
+2025-12-03T01:52:05.8142385Z  * [new tag]         0.5.1                                    -> 0.5.1
+2025-12-03T01:52:05.8143451Z  * [new tag]         0.5.2                                    -> 0.5.2
+2025-12-03T01:52:05.8144531Z  * [new tag]         0.5.3                                    -> 0.5.3
+2025-12-03T01:52:05.8145708Z  * [new tag]         0.5.4                                    -> 0.5.4
+2025-12-03T01:52:05.8146756Z  * [new tag]         0.6.0                                    -> 0.6.0
+2025-12-03T01:52:05.8147809Z  * [new tag]         0.6.1                                    -> 0.6.1
+2025-12-03T01:52:05.8148879Z  * [new tag]         0.7.0                                    -> 0.7.0
+2025-12-03T01:52:05.8149941Z  * [new tag]         0.7.1                                    -> 0.7.1
+2025-12-03T01:52:05.8151013Z  * [new tag]         0.7.2                                    -> 0.7.2
+2025-12-03T01:52:05.8152238Z  * [new ref]         033c145d320ecfa0b0d5e1d39fcf560df46271d2 -> pull/221/merge
+2025-12-03T01:52:05.8178644Z ##[endgroup]
+2025-12-03T01:52:05.8180703Z ##[group]Determining the checkout info
+2025-12-03T01:52:05.8182875Z ##[endgroup]
+2025-12-03T01:52:05.8185959Z [command]/usr/bin/git sparse-checkout disable
+2025-12-03T01:52:05.8227144Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-03T01:52:05.8252179Z ##[group]Checking out the ref
+2025-12-03T01:52:05.8255246Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/221/merge
+2025-12-03T01:52:05.8314281Z Note: switching to 'refs/remotes/pull/221/merge'.
+2025-12-03T01:52:05.8315983Z 
+2025-12-03T01:52:05.8317005Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-12-03T01:52:05.8319374Z changes and commit them, and you can discard any commits you make in this
+2025-12-03T01:52:05.8320961Z state without impacting any branches by switching back to a branch.
+2025-12-03T01:52:05.8321793Z 
+2025-12-03T01:52:05.8322387Z If you want to create a new branch to retain commits you create, you may
+2025-12-03T01:52:05.8324380Z do so (now or later) by using -c with the switch command. Example:
+2025-12-03T01:52:05.8325337Z 
+2025-12-03T01:52:05.8325701Z   git switch -c <new-branch-name>
+2025-12-03T01:52:05.8326240Z 
+2025-12-03T01:52:05.8326586Z Or undo this operation with:
+2025-12-03T01:52:05.8327120Z 
+2025-12-03T01:52:05.8327420Z   git switch -
+2025-12-03T01:52:05.8327972Z 
+2025-12-03T01:52:05.8328626Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-12-03T01:52:05.8329503Z 
+2025-12-03T01:52:05.8330495Z HEAD is now at 033c145 Merge c18690ec8007c8c2f21048856938ce9f1a144711 into 996b2b07ba111d746f412ad3e634e1eddc22c7b8
+2025-12-03T01:52:05.8333528Z ##[endgroup]
+2025-12-03T01:52:05.8360282Z [command]/usr/bin/git log -1 --format=%H
+2025-12-03T01:52:05.8381768Z 033c145d320ecfa0b0d5e1d39fcf560df46271d2
