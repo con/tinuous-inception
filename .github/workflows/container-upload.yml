@@ -10,12 +10,15 @@ on:
       - master
     paths:
       - 'Dockerfile'
+  
+  # Also build on PRs to test Dockerfile changes
+  pull_request:
+    paths:
+      - 'Dockerfile'
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    # Only upload to packages when built on master branch (not on PRs)
-    if: github.ref == 'refs/heads/master'
     
     permissions:
       contents: read
@@ -26,6 +29,8 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Log in to GitHub Container Registry
+        # Only login when pushing (on master branch)
+        if: github.ref == 'refs/heads/master'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -46,7 +51,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: true
+          # Only push to registry on master branch, otherwise just build
+          push: ${{ github.ref == 'refs/heads/master' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
